@@ -3,7 +3,6 @@ package com.maxchen.trubbo.remoting;
 import com.maxchen.trubbo.common.URL;
 import com.maxchen.trubbo.remoting.api.Channel;
 import com.maxchen.trubbo.remoting.api.ChannelHandler;
-import lombok.extern.log4j.Log4j2;
 
 import java.util.Map;
 

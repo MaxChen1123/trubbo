@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add Client and Server">
-      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/TrubboProtocolConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/NamedThreadFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/TrubboProtocolUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyChannel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyEventLoopFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/protocol/TrubboHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/protocol/TrubboMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/serialization/HessianSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/serialization/Serialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Server.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="implement basic Netty client and server">
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +119,7 @@
       <updated>1730638684437</updated>
       <workItem from="1730638685590" duration="1709000" />
       <workItem from="1730640426289" duration="8282000" />
-      <workItem from="1730705317582" duration="11860000" />
+      <workItem from="1730705317582" duration="12978000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -148,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730642436079</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implement basic Netty client and server">
+      <option name="closed" value="true" />
+      <created>1730727149259</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730727149259</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +156,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Client and Server" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Client and Server" />
+    <MESSAGE value="implement basic Netty client and server" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement basic Netty client and server" />
   </component>
 </project>
