@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting;
+package com.maxchen.trubbo.remoting.netty;
 
 import com.maxchen.trubbo.common.URL;
 import com.maxchen.trubbo.remoting.api.Channel;

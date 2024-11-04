@@ -1,10 +1,8 @@
-package com.maxchen.trubbo.remoting;
+package com.maxchen.trubbo.remoting.netty;
 
-import com.maxchen.trubbo.common.util.NamedThreadFactory;
 import com.maxchen.trubbo.remoting.api.ChannelHandler;
 import com.maxchen.trubbo.remoting.api.Server;
 import com.maxchen.trubbo.remoting.codec.TrubboCodec;
-import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
@@ -12,7 +10,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
 
 import java.net.InetSocketAddress;
-import java.util.concurrent.Executors;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -69,6 +66,7 @@ public class NettyServer implements Server {
 
     @Override
     public void close() {
-        channel.disconnect();
+        bossGroup.shutdownGracefully();
+        workerGroup.shutdownGracefully();
     }
 }

@@ -1,7 +1,6 @@
-package com.maxchen.trubbo.remoting;
+package com.maxchen.trubbo.remoting.netty;
 
 import io.netty.channel.EventLoopGroup;
-import io.netty.channel.epoll.Epoll;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.epoll.EpollSocketChannel;

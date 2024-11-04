@@ -1,9 +1,8 @@
-package com.maxchen.trubbo.remoting;
+package com.maxchen.trubbo.remoting.netty;
 
 import com.maxchen.trubbo.remoting.api.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

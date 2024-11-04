@@ -1,21 +1,17 @@
-package com.maxchen.trubbo.remoting;
+package com.maxchen.trubbo.remoting.netty;
 
 import com.maxchen.trubbo.remoting.api.ChannelHandler;
 import com.maxchen.trubbo.remoting.api.Client;
 import com.maxchen.trubbo.remoting.codec.TrubboCodec;
-import com.maxchen.trubbo.remoting.codec.TrubboDecoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.proxy.Socks5ProxyHandler;
-import io.netty.handler.timeout.IdleStateHandler;
 
 import java.net.InetSocketAddress;
 
-import static com.maxchen.trubbo.remoting.NettyEventLoopFactory.eventLoopGroup;
-import static com.maxchen.trubbo.remoting.NettyEventLoopFactory.socketChannelClass;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static com.maxchen.trubbo.remoting.netty.NettyEventLoopFactory.eventLoopGroup;
+import static com.maxchen.trubbo.remoting.netty.NettyEventLoopFactory.socketChannelClass;
 
 
 public class NettyClient implements Client {
@@ -63,7 +59,8 @@ public class NettyClient implements Client {
 
     @Override
     public void disconnect() {
-
+        ChannelFuture disconnect = channel.disconnect();
+        disconnect.syncUninterruptibly();
     }
 
     @Override
