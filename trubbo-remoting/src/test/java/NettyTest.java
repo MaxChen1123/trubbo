@@ -1,30 +1,29 @@
-import com.maxchen.trubbo.remoting.netty.NettyClient;
-import com.maxchen.trubbo.remoting.netty.NettyServer;
-import com.maxchen.trubbo.remoting.api.Channel;
-import com.maxchen.trubbo.remoting.api.ChannelHandler;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
+import com.maxchen.trubbo.remoting.netty.NettyClient;
+import com.maxchen.trubbo.remoting.netty.NettyServer;
+import com.maxchen.trubbo.remoting.netty.api.Channel;
+import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.junit.jupiter.api.Test;
-
-import java.io.Serializable;
 
 public class NettyTest {
     @Test
     public void server_test() throws InterruptedException {
         NettyServer nettyServer = new NettyServer(8080, new TestHandler());
         nettyServer.bind();
-        Thread.sleep(1000*60);
+        Thread.sleep(1000 * 60);
     }
+
     @Test
-    public void client_test(){
+    public void client_test() {
         NettyClient nettyClient = new NettyClient("localhost", 8080, new TestHandler());
         nettyClient.connect();
-        int age=18;
-        while(true){
+        int age = 18;
+        while (true) {
             nettyClient.send(new TrubboMessage(new TrubboHeader((byte) 0, 1, 0)
-                    ,new User("maxchen", age++)));
+                    , new User("maxchen", age++)));
             System.out.println("send");
             try {
                 Thread.sleep(1000);
@@ -36,6 +35,7 @@ public class NettyTest {
     }
 
 }
+
 class TestHandler implements ChannelHandler {
     @Override
     public void connected(Channel channel) {
@@ -49,7 +49,7 @@ class TestHandler implements ChannelHandler {
 
     @Override
     public void received(Channel channel, Object message) {
-        System.out.println("----------received :"+message);
+        System.out.println("----------received :" + message.toString());
     }
 
     @Override
@@ -57,9 +57,10 @@ class TestHandler implements ChannelHandler {
 
     }
 }
+
 @AllArgsConstructor
 @Data
-class User implements Serializable {
+class User {
     private static final long serialVersionUID = 1L;
     private String name;
     private int age;
