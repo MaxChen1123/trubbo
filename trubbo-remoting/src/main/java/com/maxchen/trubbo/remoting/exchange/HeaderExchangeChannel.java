@@ -25,6 +25,17 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         return RpcFuture.newFuture(this, request);
     }
 
+    @Override
+    public void response(Object message) {
+        if (!(message instanceof Response response)) {
+            throw new IllegalArgumentException("message must be instance of Request");
+        }
+        RpcContext context = RpcContext.getContext();
+        context.setRequest(false);
+        context.setRequestId(response.getRequestId());
+        client.send(message);
+    }
+
     public void connect() {
         client.connect();
     }
@@ -38,8 +49,4 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         client.send(message);
     }
 
-    @Override
-    public void close() {
-        client.disconnect();
-    }
 }

@@ -1,7 +1,6 @@
 package com.maxchen.trubbo.remoting.netty;
 
 import com.maxchen.trubbo.remoting.codec.TrubboCodec;
-import com.maxchen.trubbo.remoting.netty.api.Channel;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
 import com.maxchen.trubbo.remoting.netty.api.Client;
 import io.netty.bootstrap.Bootstrap;
@@ -25,7 +24,7 @@ public class NettyClient implements Client {
     private int port;
     private ChannelHandler handler;
     private Bootstrap bootstrap;
-    private Channel channel;
+    private NettyChannel channel;
     // TODO thread 数量
     private static final EventLoopGroup NIO_EVENT_LOOP_GROUP = eventLoopGroup(4, "NettyClientWorker");
 
@@ -67,7 +66,8 @@ public class NettyClient implements Client {
 
     @Override
     public void disconnect() {
-        channel.close();
+        ChannelFuture disconnect = channel.getChannel().disconnect();
+        disconnect.syncUninterruptibly();
     }
 
     @Override

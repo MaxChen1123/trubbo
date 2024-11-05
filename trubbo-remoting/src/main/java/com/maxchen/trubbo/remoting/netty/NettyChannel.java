@@ -5,7 +5,7 @@ import com.maxchen.trubbo.common.util.TrubboProtocolUtil;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
-import io.netty.channel.ChannelFuture;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Map;
@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @NoArgsConstructor
 public class NettyChannel implements Channel {
     public static final Map<io.netty.channel.Channel, Channel> CHANNEL_MAP = new ConcurrentHashMap<>();
-
+    @Getter
     private io.netty.channel.Channel channel;
 
     public NettyChannel(io.netty.channel.Channel channel) {
@@ -45,9 +45,4 @@ public class NettyChannel implements Channel {
         channel.writeAndFlush(trubboMessage);
     }
 
-    @Override
-    public void close() {
-        ChannelFuture disconnect = channel.disconnect();
-        disconnect.syncUninterruptibly();
-    }
 }

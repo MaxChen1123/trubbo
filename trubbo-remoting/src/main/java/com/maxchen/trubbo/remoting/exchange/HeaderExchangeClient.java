@@ -23,11 +23,6 @@ public class HeaderExchangeClient implements ExchangeClient {
     }
 
     @Override
-    public void close() {
-        channel.disconnect();
-    }
-
-    @Override
     public void connect() {
         channel.connect();
     }
