@@ -1,12 +1,17 @@
 package com.maxchen.trubbo.remoting.netty;
 
-import com.maxchen.trubbo.remoting.api.ChannelHandler;
-import com.maxchen.trubbo.remoting.api.Client;
 import com.maxchen.trubbo.remoting.codec.TrubboCodec;
+import com.maxchen.trubbo.remoting.netty.api.Channel;
+import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
+import com.maxchen.trubbo.remoting.netty.api.Client;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
-import io.netty.channel.*;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
+import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
 
@@ -14,6 +19,7 @@ import static com.maxchen.trubbo.remoting.netty.NettyEventLoopFactory.eventLoopG
 import static com.maxchen.trubbo.remoting.netty.NettyEventLoopFactory.socketChannelClass;
 
 
+@Slf4j
 public class NettyClient implements Client {
     private String host;
     private int port;
@@ -54,17 +60,18 @@ public class NettyClient implements Client {
     public void connect() {
         ChannelFuture connect = bootstrap.connect(new InetSocketAddress(host, port));
         connect.syncUninterruptibly();
-        channel = connect.channel();
+        log.info("NettyClient connect to {}:{}", host, port);
+        io.netty.channel.Channel nettyChannel = connect.channel();
+        channel = new NettyChannel(nettyChannel);
     }
 
     @Override
     public void disconnect() {
-        ChannelFuture disconnect = channel.disconnect();
-        disconnect.syncUninterruptibly();
+        channel.close();
     }
 
     @Override
     public void send(Object message) {
-        channel.writeAndFlush(message);
+        channel.send(message);
     }
 }

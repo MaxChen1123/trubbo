@@ -1,11 +1,14 @@
 package com.maxchen.trubbo.remoting.netty;
 
-import com.maxchen.trubbo.remoting.api.ChannelHandler;
-import com.maxchen.trubbo.remoting.api.Server;
 import com.maxchen.trubbo.remoting.codec.TrubboCodec;
+import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
+import com.maxchen.trubbo.remoting.netty.api.Server;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
-import io.netty.channel.*;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
 
@@ -19,10 +22,8 @@ public class NettyServer implements Server {
     private ChannelHandler handler;
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
-    private Channel channel;
 
-
-    public NettyServer(int port,ChannelHandler handler){
+    public NettyServer(int port, ChannelHandler handler) {
         this.port = port;
         this.handler = handler;
         bootstrap = new ServerBootstrap();
@@ -56,12 +57,11 @@ public class NettyServer implements Server {
                 });
 
     }
+
     @Override
     public void bind() {
         ChannelFuture channelFuture = bootstrap.bind(new InetSocketAddress(port));
         channelFuture.syncUninterruptibly(); // 等待bind操作完成
-        channel = channelFuture.channel();
-
     }
 
     @Override

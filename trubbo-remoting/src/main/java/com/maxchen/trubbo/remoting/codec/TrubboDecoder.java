@@ -1,10 +1,13 @@
 package com.maxchen.trubbo.remoting.codec;
 
 import com.maxchen.trubbo.common.TrubboProtocolConstant;
+import com.maxchen.trubbo.common.util.TrubboProtocolUtil;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
-import com.maxchen.trubbo.remoting.codec.serialization.HessianSerializer;
+import com.maxchen.trubbo.remoting.codec.serialization.KyroSerializer;
 import com.maxchen.trubbo.remoting.codec.serialization.Serialization;
+import com.maxchen.trubbo.remoting.exchange.Request;
+import com.maxchen.trubbo.remoting.exchange.Response;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
@@ -12,29 +15,35 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import java.util.List;
 
 public class TrubboDecoder extends ByteToMessageDecoder {
-    private final Serialization serializer =new HessianSerializer();
+    private final Serialization serializer = new KyroSerializer();
+
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
-        if(byteBuf.readableBytes()< TrubboProtocolConstant.HEADER_LENGTH){
+        if (byteBuf.readableBytes() < TrubboProtocolConstant.HEADER_LENGTH) {
             return;
         }
         byteBuf.markReaderIndex();
-        short magic=byteBuf.readShort();
-        if(magic!= TrubboHeader.MAGIC){
+        short magic = byteBuf.readShort();
+        if (magic != TrubboHeader.MAGIC) {
             byteBuf.resetReaderIndex();
-            throw new RuntimeException("Unknown magic code:"+magic);
+            throw new RuntimeException("Unknown magic code:" + magic);
         }
-        byte info=byteBuf.readByte();
-        long messageId=byteBuf.readLong();
-        int size=byteBuf.readInt();
-        if(byteBuf.readableBytes()<size){
+        byte info = byteBuf.readByte();
+        long messageId = byteBuf.readLong();
+        int size = byteBuf.readInt();
+        if (byteBuf.readableBytes() < size) {
             byteBuf.resetReaderIndex();
             return;
         }
-        byte[] bytes=new byte[size];
+        byte[] bytes = new byte[size];
         byteBuf.readBytes(bytes);
-        // TODO
-        Object object=serializer.deserialize(bytes,Object.class);
+        Class<?> clazz;
+        if (TrubboProtocolUtil.isRequest(info)) {
+            clazz = Request.class;
+        } else {
+            clazz = Response.class;
+        }
+        Object object = serializer.deserialize(bytes, clazz);
         TrubboMessage trubboMessage = new TrubboMessage(new TrubboHeader(info, messageId, size), object);
         list.add(trubboMessage);
     }

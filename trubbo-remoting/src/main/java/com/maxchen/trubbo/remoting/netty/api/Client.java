@@ -1,9 +1,9 @@
-package com.maxchen.trubbo.remoting.api;
-
-import com.maxchen.trubbo.common.URL;
+package com.maxchen.trubbo.remoting.netty.api;
 
 public interface Client {
     void connect();
+
     void disconnect();
+
     void send(Object message);
 }

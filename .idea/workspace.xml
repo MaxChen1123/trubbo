@@ -4,9 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="implement basic Netty client and server">
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/NettyChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="KryoSerializer Test">
+      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/AbstractChannelHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/api/ExchangeChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/api/ExchangeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Channel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/HeaderExchangeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/TrubboProtocolUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/TrubboProtocolUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Channel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/ChannelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/ChannelHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/api/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/TrubboEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +46,9 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -31,8 +59,11 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -45,6 +76,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.HeaderExchangeTest.request_test.executor": "Run",
+    "JUnit.HeaderExchangeTest.server.executor": "Run",
     "JUnit.NettyTest.client_test.executor": "Run",
     "JUnit.NettyTest.server_test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -60,7 +93,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "copyright.profiles",
+    "settings.editor.selected.configurable": "actions.on.save",
     "settings.editor.splitter.proportion": "0.2517839",
     "vue.rearranger.settings.migration": "true"
   }
@@ -73,7 +106,27 @@
       <recent name="com.maxchen.trubbo.remoting" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NettyTest.client_test">
+  <component name="RunManager" selected="JUnit.HeaderExchangeTest.request_test">
+    <configuration name="HeaderExchangeTest.request_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-remoting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HeaderExchangeTest" />
+      <option name="METHOD_NAME" value="request_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeaderExchangeTest.server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-remoting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HeaderExchangeTest" />
+      <option name="METHOD_NAME" value="server" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NettyTest.client_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-remoting" />
       <option name="PACKAGE_NAME" value="" />
@@ -96,6 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HeaderExchangeTest.request_test" />
+        <item itemvalue="JUnit.HeaderExchangeTest.server" />
         <item itemvalue="JUnit.NettyTest.client_test" />
         <item itemvalue="JUnit.NettyTest.server_test" />
       </list>
@@ -119,7 +174,8 @@
       <updated>1730638684437</updated>
       <workItem from="1730638685590" duration="1709000" />
       <workItem from="1730640426289" duration="8282000" />
-      <workItem from="1730705317582" duration="12978000" />
+      <workItem from="1730705317582" duration="22333000" />
+      <workItem from="1730810698864" duration="9234000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -137,7 +193,39 @@
       <option name="project" value="LOCAL" />
       <updated>1730727149259</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update test unit">
+      <option name="closed" value="true" />
+      <created>1730728481922</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730728481922</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change package structure">
+      <option name="closed" value="true" />
+      <created>1730728825071</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730728825071</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add KryoSerializer">
+      <option name="closed" value="true" />
+      <created>1730811998211</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730811998211</updated>
+    </task>
+    <task id="LOCAL-00006" summary="KryoSerializer Test">
+      <option name="closed" value="true" />
+      <created>1730812029661</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730812029661</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +245,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Client and Server" />
     <MESSAGE value="implement basic Netty client and server" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement basic Netty client and server" />
+    <MESSAGE value="update test unit" />
+    <MESSAGE value="change package structure" />
+    <MESSAGE value="add KryoSerializer" />
+    <MESSAGE value="KryoSerializer Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="KryoSerializer Test" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

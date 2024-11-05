@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.api;
+package com.maxchen.trubbo.remoting.netty.api;
 
 public interface ChannelHandler {
     void connected(Channel channel);
