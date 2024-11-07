@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.common;
+package com.maxchen.trubbo.common.URL;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -63,6 +63,10 @@ public class URL implements Serializable {
         }
 
         return sb.toString();
+    }
+
+    public String getParameter(String key, String defaultValue) {
+        return parameters.getOrDefault(key, defaultValue);
     }
 
     private int getDefaultPort() {
