@@ -11,15 +11,16 @@ import java.util.concurrent.Future;
 
 public class HeaderExchangeClient implements ExchangeClient {
     private ExchangeChannel channel;
+    // TODO heartbeat timer
 
-    public HeaderExchangeClient(ChannelHandler channelHandler) {
+    public HeaderExchangeClient(ChannelHandler channelHandler /*this handler is made in Protocol layer*/) {
         RpcContext context = RpcContext.getContext();
         URL url = context.getUrl();
         String host = url.getHost();
         int port = url.getPort();
 
-        channel = new HeaderExchangeChannel(
-                new NettyClient(host, port, new HeaderExchangeHandler(channelHandler)));
+        channel = new HeaderExchangeChannel(new NettyClient(host, port,
+                ChannelHandlers.getClientChannelHandler(channelHandler)));
     }
 
     @Override

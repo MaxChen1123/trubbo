@@ -81,27 +81,28 @@ public class RpcFuture extends CompletableFuture<Response> {
         return future;
     }
 
-}
+    static class FutureTimeoutTask implements TimerTask {
+        private final RpcFuture future;
 
-class FutureTimeoutTask implements TimerTask {
-    private final RpcFuture future;
+        public FutureTimeoutTask(RpcFuture future) {
+            this.future = future;
+        }
 
-    public FutureTimeoutTask(RpcFuture future) {
-        this.future = future;
-    }
-
-    @Override
-    public void run(Timeout timeout) throws Exception {
-        if (future.isCancelled()) {
-            return;
-        } else {
-            future.setTimeout(true);
-            Response timeoutResponse = Response.builder()
-                    .requestId(future.getRequestId())
-                    .isException(true)
-                    .exception(new RpcTimeoutException("RpcFuture timeout, at " + LocalTime.now()))
-                    .build();
-            RpcFuture.receiveResponse(timeoutResponse);
+        @Override
+        public void run(Timeout timeout) throws Exception {
+            if (future.isCancelled()) {
+                return;
+            } else {
+                future.setTimeout(true);
+                Response timeoutResponse = Response.builder()
+                        .requestId(future.getRequestId())
+                        .isException(true)
+                        .exception(new RpcTimeoutException("RpcFuture timeout, at " + LocalTime.now()))
+                        .build();
+                RpcFuture.receiveResponse(timeoutResponse);
+            }
         }
     }
+
 }
+

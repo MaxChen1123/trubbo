@@ -7,16 +7,21 @@ import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
+@Getter
 @NoArgsConstructor
 public class NettyChannel implements Channel {
     public static final Map<io.netty.channel.Channel, Channel> CHANNEL_MAP = new ConcurrentHashMap<>();
-    @Getter
     private io.netty.channel.Channel channel;
+    @Setter
+    private volatile long lastReadTime;
+    @Setter
+    private volatile long lastWriteTime;
 
     public static NettyChannel getChannel(io.netty.channel.Channel channel) {
         if (CHANNEL_MAP.containsKey(channel)) {
