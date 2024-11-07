@@ -18,7 +18,7 @@ public class RpcContext {
     private volatile long requestId;
     private volatile boolean isRequest;
     private volatile boolean isHeartBeat;
-    private volatile boolean isAsync;
+    private volatile boolean isOneWay;
 
     //    private String serviceName;
 //    private String methodName;

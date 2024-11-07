@@ -57,6 +57,12 @@ public class HeaderExchangeChannel implements ExchangeChannel {
 
     @Override
     public void send(Object message) {
+        if (!(message instanceof Request request)) {
+            throw new IllegalArgumentException("message must be instance of Request");
+        }
+        RpcContext context = RpcContext.getContext();
+        context.setRequest(true);
+        context.setRequestId(request.getRequestId());
         client.send(message);
     }
 

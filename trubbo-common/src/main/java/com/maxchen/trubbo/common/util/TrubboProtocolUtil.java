@@ -9,7 +9,7 @@ public class TrubboProtocolUtil {
         return (info & (0x80)) != 0;
     }
 
-    public static boolean isAsync(byte info) {
+    public static boolean isOneWay(byte info) {
         return (info & (0x20)) != 0;
     }
 
@@ -21,7 +21,7 @@ public class TrubboProtocolUtil {
         return (byte) (info | (0x80));
     }
 
-    public static byte setAsync(byte info) {
+    public static byte setOneWay(byte info) {
         return (byte) (info | (0x20));
     }
 
@@ -33,7 +33,7 @@ public class TrubboProtocolUtil {
         return (byte) (info & (0x7F));
     }
 
-    public static byte clearAsync(byte info) {
+    public static byte clearOneWay(byte info) {
         return (byte) (info & (0xDF));
     }
 }

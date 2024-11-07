@@ -44,8 +44,8 @@ public class NettyChannel implements Channel {
             if (context.isHeartBeat()) {
                 info = TrubboProtocolUtil.setHeartBeat(info);
             }
-            if (context.isAsync()) {
-                info = TrubboProtocolUtil.setAsync(info);
+            if (context.isOneWay()) {
+                info = TrubboProtocolUtil.setOneWay(info);
             }
             trubboHeader.setInfo(info);
         }

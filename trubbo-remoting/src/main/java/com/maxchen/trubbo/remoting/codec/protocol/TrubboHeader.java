@@ -21,7 +21,7 @@ public class TrubboHeader {
         context.setRequestId(header.getMessageId());
         context.setRequest(TrubboProtocolUtil.isRequest(info));
         context.setHeartBeat(TrubboProtocolUtil.isHeartBeat(info));
-        context.setAsync(TrubboProtocolUtil.isAsync(info));
+        context.setOneWay(TrubboProtocolUtil.isOneWay(info));
     }
 }
 
