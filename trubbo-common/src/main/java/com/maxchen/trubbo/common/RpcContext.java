@@ -14,11 +14,11 @@ public class RpcContext {
             return new RpcContext();
         }
     };
-    private URL url;
-    private long requestId;
-    private boolean isRequest;
-    private boolean isHeartBeat;
-    private boolean isAsync;
+    private volatile URL url;
+    private volatile long requestId;
+    private volatile boolean isRequest;
+    private volatile boolean isHeartBeat;
+    private volatile boolean isAsync;
 
     //    private String serviceName;
 //    private String methodName;
