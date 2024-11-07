@@ -18,6 +18,14 @@ public class NettyChannel implements Channel {
     @Getter
     private io.netty.channel.Channel channel;
 
+    public static NettyChannel getChannel(io.netty.channel.Channel channel) {
+        if (CHANNEL_MAP.containsKey(channel)) {
+            return (NettyChannel) CHANNEL_MAP.get(channel);
+        } else {
+            return new NettyChannel(channel);
+        }
+    }
+
     public NettyChannel(io.netty.channel.Channel channel) {
         this.channel = channel;
         CHANNEL_MAP.put(channel, this);

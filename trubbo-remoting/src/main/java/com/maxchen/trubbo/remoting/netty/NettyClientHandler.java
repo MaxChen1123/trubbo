@@ -15,8 +15,8 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<TrubboMessag
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, TrubboMessage o) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, TrubboMessage o) throws Exception {
         log.info("NettyClientHandler.channelRead0 read {}", o);
-        handler.received(NettyChannel.CHANNEL_MAP.get(channelHandlerContext.channel()), o);
+        handler.received(NettyChannel.getChannel(ctx.channel()), o);
     }
 }

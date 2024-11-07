@@ -41,4 +41,9 @@ public class HeaderExchangeClient implements ExchangeClient {
     public Future<Response> request(Object message) {
         return channel.request(message);
     }
+
+    @Override
+    public void response(Object message) {
+        throw new UnsupportedOperationException("Client cannot response");
+    }
 }

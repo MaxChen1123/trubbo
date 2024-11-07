@@ -32,8 +32,7 @@ public class NettyServer implements Server {
                 // TODO
                 4,
                 "NettyServerWorker");
-        // TODO
-        NettyClientHandler nettyServerHandler = new NettyClientHandler(handler);
+        NettyServerHandler nettyServerHandler = new NettyServerHandler(handler);
 
         // 初始化ServerBootstrap，指定boss和worker EventLoopGroup
         bootstrap.group(bossGroup, workerGroup)

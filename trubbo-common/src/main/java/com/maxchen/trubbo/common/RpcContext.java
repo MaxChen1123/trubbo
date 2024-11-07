@@ -23,7 +23,7 @@ public class RpcContext {
 //    private String methodName;
 //    private Class<?>[] argsTypes;
 //    private Object[] args;
-    public void setUrl(String url) throws URISyntaxException {
+    public void setUrlFromString(String url) throws URISyntaxException {
         this.url = new URL(url);
     }
 
