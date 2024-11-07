@@ -11,6 +11,7 @@
     <modules>
         <module>trubbo-remoting</module>
         <module>trubbo-common</module>
+        <module>trubbo-rpc</module>
     </modules>
 
     <properties>
