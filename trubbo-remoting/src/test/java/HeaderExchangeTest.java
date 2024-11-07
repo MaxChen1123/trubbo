@@ -1,12 +1,14 @@
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
 import com.maxchen.trubbo.remoting.exchange.HeaderExchangeClient;
+import com.maxchen.trubbo.remoting.exchange.HeaderExchangeServer;
 import com.maxchen.trubbo.remoting.exchange.Request;
 import com.maxchen.trubbo.remoting.netty.NettyServer;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
 import org.junit.jupiter.api.Test;
 
+import java.net.URISyntaxException;
 import java.util.Arrays;
 
 
@@ -14,7 +16,7 @@ public class HeaderExchangeTest {
     @Test
     public void request_test() throws Exception {
         RpcContext context = RpcContext.getContext();
-        context.setUrl("Provider://127.0.0.1:8080");
+        context.setUrlFromString("Provider://127.0.0.1:8080");
         HeaderExchangeClient headerExchangeClient = new HeaderExchangeClient(new HeaderExchangeTestHandler());
         headerExchangeClient.connect();
 
@@ -31,6 +33,15 @@ public class HeaderExchangeTest {
     public void server() throws InterruptedException {
         NettyServer nettyServer = new NettyServer(8080, new HeaderExchangeTestHandler());
         nettyServer.bind();
+        Thread.sleep(1000 * 60);
+    }
+
+    @Test
+    public void exchangeServer_test() throws URISyntaxException, InterruptedException {
+        RpcContext context = RpcContext.getContext();
+        context.setUrlFromString("Provider://127.0.0.1:8080");
+        HeaderExchangeServer headerExchangeServer = new HeaderExchangeServer(new HeaderExchangeTestHandler());
+        headerExchangeServer.bind();
         Thread.sleep(1000 * 60);
     }
 
