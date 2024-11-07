@@ -26,9 +26,10 @@ public class NettyClientHandler extends ChannelDuplexHandler {
             RpcContext context = RpcContext.getContext();
             TrubboHeader.setContext(context, message.getHeader());
             handler.received(NettyChannel.getChannel(ctx.channel()), message.getBody());
-        }
-        log.warn("NettyClientHandler.channelRead0 read unknown object {}", o);
+        } else {
+            log.warn("NettyClientHandler.channelRead0 read unknown object {}", o);
 
+        }
     }
 
     @Override
