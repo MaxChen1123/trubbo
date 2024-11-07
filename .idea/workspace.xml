@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="optimize Channel interface">
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/api/ExchangeServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServerHandler.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add function to URL">
+      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/exception/RpcTimeoutException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/RpcFutureTest/RpcFutureTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/URL/URL.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/URL/URL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/AbstractChannelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/AbstractChannelHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/protocol/TrubboHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/codec/protocol/TrubboHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/ChannelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/ChannelHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/test/java/HeaderExchangeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/HeaderExchangeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/NettyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -64,6 +71,8 @@
     "JUnit.HeaderExchangeTest.server.executor": "Run",
     "JUnit.NettyTest.client_test.executor": "Run",
     "JUnit.NettyTest.server_test.executor": "Run",
+    "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
+    "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -90,7 +99,7 @@
       <recent name="com.maxchen.trubbo.remoting" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HeaderExchangeTest.request_test">
+  <component name="RunManager" selected="JUnit.RpcFutureTest.rpcTest_client">
     <configuration name="HeaderExchangeTest.exchangeServer_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-remoting" />
       <option name="PACKAGE_NAME" value="" />
@@ -121,21 +130,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NettyTest.client_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RpcFutureTest.rpcTest_client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-remoting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NettyTest" />
-      <option name="METHOD_NAME" value="client_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="RpcFutureTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="RpcFutureTest" />
+      <option name="MAIN_CLASS_NAME" value="RpcFutureTest.RpcFutureTest" />
+      <option name="METHOD_NAME" value="rpcTest_client" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NettyTest.server_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RpcFutureTest.rpcTest_server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-remoting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NettyTest" />
-      <option name="METHOD_NAME" value="server_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="RpcFutureTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="RpcFutureTest" />
+      <option name="MAIN_CLASS_NAME" value="RpcFutureTest.RpcFutureTest" />
+      <option name="METHOD_NAME" value="rpcTest_server" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RpcFutureTest.rpcTest_client" />
+        <item itemvalue="JUnit.RpcFutureTest.rpcTest_server" />
         <item itemvalue="JUnit.HeaderExchangeTest.request_test" />
         <item itemvalue="JUnit.HeaderExchangeTest.exchangeServer_test" />
         <item itemvalue="JUnit.HeaderExchangeTest.server" />
-        <item itemvalue="JUnit.NettyTest.client_test" />
-        <item itemvalue="JUnit.NettyTest.server_test" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +192,7 @@
       <workItem from="1730640426289" duration="8282000" />
       <workItem from="1730705317582" duration="22333000" />
       <workItem from="1730810698864" duration="11323000" />
-      <workItem from="1730958799257" duration="2919000" />
+      <workItem from="1730958799257" duration="13072000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -237,7 +258,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730821718244</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add HeaderExchangeServer">
+      <option name="closed" value="true" />
+      <created>1730961867453</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730961867453</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add HeaderExchangeServer function test">
+      <option name="closed" value="true" />
+      <created>1730961896846</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730961896846</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add function to URL">
+      <option name="closed" value="true" />
+      <created>1730969258502</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730969258502</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +308,10 @@
     <MESSAGE value="KryoSerializer Test" />
     <MESSAGE value="HeaderExchangeClient completed" />
     <MESSAGE value="optimize Channel interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize Channel interface" />
+    <MESSAGE value="add HeaderExchangeServer" />
+    <MESSAGE value="add HeaderExchangeServer function test" />
+    <MESSAGE value="add function to URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function to URL" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

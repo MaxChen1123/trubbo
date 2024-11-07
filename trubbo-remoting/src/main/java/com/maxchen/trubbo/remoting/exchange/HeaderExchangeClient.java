@@ -1,7 +1,7 @@
 package com.maxchen.trubbo.remoting.exchange;
 
 import com.maxchen.trubbo.common.RpcContext;
-import com.maxchen.trubbo.common.URL;
+import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.remoting.exchange.api.ExchangeChannel;
 import com.maxchen.trubbo.remoting.exchange.api.ExchangeClient;
 import com.maxchen.trubbo.remoting.netty.NettyClient;

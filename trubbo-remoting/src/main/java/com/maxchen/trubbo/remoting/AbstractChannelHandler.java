@@ -29,4 +29,9 @@ abstract public class AbstractChannelHandler implements ChannelHandler {
     public void caught(Channel channel, Throwable exception) {
         handler.caught(channel, exception);
     }
+
+    @Override
+    public void sent(Channel channel, Object message) {
+        handler.sent(channel, message);
+    }
 }

@@ -69,6 +69,10 @@ public class URL implements Serializable {
         return parameters.getOrDefault(key, defaultValue);
     }
 
+    public String getParameter(String key) {
+        return parameters.get(key);
+    }
+
     private int getDefaultPort() {
         return switch (protocol) {
             case "http" -> 80;

@@ -1,5 +1,7 @@
 package com.maxchen.trubbo.remoting.netty;
 
+import com.maxchen.trubbo.common.RpcContext;
+import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
 import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -17,6 +19,8 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<TrubboMessag
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TrubboMessage o) throws Exception {
         log.info("NettyClientHandler.channelRead0 read {}", o);
-        handler.received(NettyChannel.getChannel(ctx.channel()), o);
+        RpcContext context = RpcContext.getContext();
+        TrubboHeader.setContext(context, o.getHeader());
+        handler.received(NettyChannel.getChannel(ctx.channel()), o.getBody());
     }
 }

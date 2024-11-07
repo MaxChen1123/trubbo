@@ -76,4 +76,9 @@ class HeaderExchangeTestHandler implements ChannelHandler {
     public void caught(Channel channel, Throwable exception) {
 
     }
+
+    @Override
+    public void sent(Channel channel, Object message) {
+
+    }
 }

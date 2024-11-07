@@ -8,4 +8,6 @@ public interface ChannelHandler {
     void received(Channel channel, Object message);
 
     void caught(Channel channel, Throwable exception);
+
+    void sent(Channel channel, Object message);
 }

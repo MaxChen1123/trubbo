@@ -1,6 +1,7 @@
 package com.maxchen.trubbo.common;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
+import com.maxchen.trubbo.common.URL.URL;
 import lombok.Data;
 
 import java.net.URISyntaxException;
