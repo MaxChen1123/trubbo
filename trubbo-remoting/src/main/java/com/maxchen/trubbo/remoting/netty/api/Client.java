@@ -6,4 +6,8 @@ public interface Client {
     void disconnect();
 
     void send(Object message);
+
+    long getLastReadTime();
+
+    long getLastWriteTime();
 }

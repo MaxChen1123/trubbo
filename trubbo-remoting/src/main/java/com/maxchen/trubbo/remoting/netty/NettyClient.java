@@ -74,4 +74,12 @@ public class NettyClient implements Client {
     public void send(Object message) {
         channel.send(message);
     }
+
+    public long getLastReadTime() {
+        return channel.getLastReadTime();
+    }
+
+    public long getLastWriteTime() {
+        return channel.getLastWriteTime();
+    }
 }

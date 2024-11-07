@@ -66,4 +66,12 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         client.send(message);
     }
 
+    public long getLastReadTime() {
+        return client.getLastReadTime();
+    }
+
+    public long getLastWriteTime() {
+        return client.getLastWriteTime();
+    }
+
 }
