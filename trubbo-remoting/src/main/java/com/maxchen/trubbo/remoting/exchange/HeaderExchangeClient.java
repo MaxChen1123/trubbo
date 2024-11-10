@@ -21,6 +21,7 @@ public class HeaderExchangeClient implements ExchangeClient {
         int port = url.getPort();
         client = (new NettyClient(host, port,
                 ChannelHandlers.getClientChannelHandler(channelHandler)));
+        client.connect();
         channel = new HeaderExchangeChannel(client);
     }
 
@@ -29,6 +30,7 @@ public class HeaderExchangeClient implements ExchangeClient {
         int port = url.getPort();
         client = (new NettyClient(host, port,
                 ChannelHandlers.getClientChannelHandler(channelHandler)));
+        client.connect();
         channel = new HeaderExchangeChannel(client);
     }
 
