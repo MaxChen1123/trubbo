@@ -20,7 +20,12 @@ public class HeaderExchangeTest {
         HeaderExchangeClient headerExchangeClient = new HeaderExchangeClient(new HeaderExchangeTestHandler());
         headerExchangeClient.connect();
 
-        Request request = new Request();
+        Request request = Request.builder()
+                .requestId(1)
+                .serviceName("HelloService")
+                .argsTypes(new Class[]{String.class, User.class})
+                .args(new Object[]{"hello", new User("maxchen", 18)})
+                .build();
         request.setRequestId(1);
         request.setServiceName("HelloService");
         request.setArgsTypes(new Class[]{String.class, User.class});

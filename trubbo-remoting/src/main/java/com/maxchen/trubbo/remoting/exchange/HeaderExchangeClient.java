@@ -24,6 +24,14 @@ public class HeaderExchangeClient implements ExchangeClient {
         channel = new HeaderExchangeChannel(client);
     }
 
+    public HeaderExchangeClient(URL url, ChannelHandler channelHandler /*this handler is made in Protocol layer*/) {
+        String host = url.getHost();
+        int port = url.getPort();
+        client = (new NettyClient(host, port,
+                ChannelHandlers.getClientChannelHandler(channelHandler)));
+        channel = new HeaderExchangeChannel(client);
+    }
+
     @Override
     public void connect() {
         channel.connect();

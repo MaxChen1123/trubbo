@@ -73,6 +73,14 @@ public class URL implements Serializable {
         return parameters.get(key);
     }
 
+    public String getProviderAddress() {
+        return host + ":" + port;
+    }
+
+    public String getInvokerKey() {
+        return getParameter(UrlConstant.SERVICE_KEY) + ":" + getProviderAddress();
+    }
+
     private int getDefaultPort() {
         return switch (protocol) {
             case "http" -> 80;

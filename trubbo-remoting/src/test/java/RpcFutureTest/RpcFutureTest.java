@@ -23,11 +23,14 @@ public class RpcFutureTest {
         headerExchangeClient.connect();
 
         context.setUrlFromString("Provider://127.0.0.1:8080?timeout=5000");
-        Request request = new Request();
-        request.setRequestId(1);
-        request.setServiceName("HelloService");
-        request.setArgsTypes(new Class[]{String.class, User.class});
-        request.setArgs(new Object[]{"hello", new User("maxchen", 18)});
+        context.setRequest(true);
+        Request request = Request.builder()
+                .requestId(1)
+                .serviceName("HelloService")
+                .argsTypes(new Class[]{String.class, User.class})
+                .args(new Object[]{"hello", new User("maxchen", 18)})
+                .build();
+
         Future<Response> future = headerExchangeClient.request(request);
         Response response = future.get();
         if (response.isException()) {
@@ -100,7 +103,7 @@ class ServerTestHandler implements ChannelHandler {
         RpcContext context = RpcContext.getContext();
         context.setRequest(false);
         try {
-            Thread.sleep(6000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

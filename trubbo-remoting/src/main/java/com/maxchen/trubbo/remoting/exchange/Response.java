@@ -11,7 +11,7 @@ public class Response implements Serializable {
     private static final long serialVersionUID = 1L;
     private long requestId;
     private String serviceName;
-    private Class<?> returnType;
+    private Class<?> returnType;   //shouldn't be Future
     private String methodName;
     private Object result;
     private boolean isException;

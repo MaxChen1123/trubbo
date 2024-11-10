@@ -28,7 +28,6 @@ public class NettyClientHandler extends ChannelDuplexHandler {
             handler.received(NettyChannel.getChannel(ctx.channel()), message.getBody());
         } else {
             log.warn("NettyClientHandler.channelRead0 read unknown object {}", o);
-
         }
     }
 

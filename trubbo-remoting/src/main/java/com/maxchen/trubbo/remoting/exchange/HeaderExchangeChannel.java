@@ -20,10 +20,8 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         if (!(message instanceof Request request)) {
             throw new IllegalArgumentException("message must be instance of Request");
         }
-        RpcContext context = RpcContext.getContext();
-        context.setRequest(true);
-        context.setRequestId(request.getRequestId());
 
+        RpcContext context = RpcContext.getContext();
         RpcFuture future;
         URL url = context.getUrl();
         String timeout = url.getParameter(UrlConstant.TIMEOUT_KEY);
