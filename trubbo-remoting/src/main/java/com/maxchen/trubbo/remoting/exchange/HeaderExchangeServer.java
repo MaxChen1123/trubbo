@@ -24,4 +24,9 @@ public class HeaderExchangeServer implements ExchangeServer {
     public void close() {
         nettyServer.close();
     }
+
+    @Override
+    public int getPort() {
+        return nettyServer.getPort();
+    }
 }

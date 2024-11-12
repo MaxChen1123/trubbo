@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add ConsumerInvoker">
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add ProtocolConsumerTest">
+      <change afterPath="$PROJECT_DIR$/.idea/copyright/myCopyright.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/Exporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocationResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +52,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -61,6 +71,7 @@
     "JUnit.NettyTest.client_test.executor": "Run",
     "JUnit.NettyTest.server_test.executor": "Run",
     "JUnit.ProtocolConsumerTest.consumerInvoker_test.executor": "Run",
+    "JUnit.ProtocolConsumerTest.rpcTest_exporter.executor": "Run",
     "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
     "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
     "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
@@ -92,16 +103,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.ProtocolConsumerTest.consumerInvoker_test">
-    <configuration name="HeaderExchangeTest.request_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trubbo-remoting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HeaderExchangeTest" />
-      <option name="METHOD_NAME" value="request_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProtocolConsumerTest.consumerInvoker_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-rpc" />
       <extension name="coverage">
@@ -113,6 +114,22 @@
       <option name="PACKAGE_NAME" value="protocolTest" />
       <option name="MAIN_CLASS_NAME" value="protocolTest.ProtocolConsumerTest" />
       <option name="METHOD_NAME" value="consumerInvoker_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProtocolConsumerTest.rpcTest_exporter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-rpc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="protocolTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="protocolTest" />
+      <option name="MAIN_CLASS_NAME" value="protocolTest.ProtocolConsumerTest" />
+      <option name="METHOD_NAME" value="rpcTest_exporter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,10 +186,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ProtocolConsumerTest.consumerInvoker_test" />
+        <item itemvalue="JUnit.ProtocolConsumerTest.rpcTest_exporter" />
         <item itemvalue="JUnit.ProtocolConsumerTest.rpcTest_server" />
         <item itemvalue="JUnit.RpcFutureTest.rpcTest_client" />
         <item itemvalue="JUnit.RpcFutureTest.rpcTest_server" />
-        <item itemvalue="JUnit.HeaderExchangeTest.request_test" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +217,8 @@
       <workItem from="1730983348180" duration="9783000" />
       <workItem from="1731163025442" duration="1307000" />
       <workItem from="1731222006104" duration="6007000" />
-      <workItem from="1731245073291" duration="6909000" />
+      <workItem from="1731245073291" duration="7354000" />
+      <workItem from="1731417589409" duration="7919000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -370,7 +388,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731250211093</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bugfix">
+      <option name="closed" value="true" />
+      <created>1731252163528</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1731252163528</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add ProtocolConsumerTest">
+      <option name="closed" value="true" />
+      <created>1731252181773</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731252181773</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,9 +438,10 @@
     <MESSAGE value="add HeartBeatHandler" />
     <MESSAGE value="change structure" />
     <MESSAGE value="add trubbo-rpc module" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="add ConsumerInvoker" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ConsumerInvoker" />
+    <MESSAGE value="bugfix" />
+    <MESSAGE value="add ProtocolConsumerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ProtocolConsumerTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

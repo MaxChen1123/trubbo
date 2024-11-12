@@ -68,4 +68,9 @@ public class NettyServer implements Server {
         bossGroup.shutdownGracefully();
         workerGroup.shutdownGracefully();
     }
+
+    @Override
+    public int getPort() {
+        return port;
+    }
 }

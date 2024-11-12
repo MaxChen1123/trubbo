@@ -4,4 +4,6 @@ public interface Server {
     void bind();
 
     void close();
+
+    int getPort();
 }
