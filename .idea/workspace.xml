@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add Exporter test">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +205,7 @@
       <workItem from="1731163025442" duration="1307000" />
       <workItem from="1731222006104" duration="6007000" />
       <workItem from="1731245073291" duration="7354000" />
-      <workItem from="1731417589409" duration="8775000" />
+      <workItem from="1731417589409" duration="9372000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -406,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731425895241</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="bugfix">
+      <option name="closed" value="true" />
+      <created>1731426972446</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1731426972446</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,11 +450,11 @@
     <MESSAGE value="change structure" />
     <MESSAGE value="add trubbo-rpc module" />
     <MESSAGE value="add ConsumerInvoker" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="add ProtocolConsumerTest" />
     <MESSAGE value="add Exporter" />
     <MESSAGE value="add Exporter test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Exporter test" />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
