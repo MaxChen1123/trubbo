@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add ProtocolConsumerTest">
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/myCopyright.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/Exporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocationResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestService.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add Exporter test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/api/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +204,7 @@
       <workItem from="1731163025442" duration="1307000" />
       <workItem from="1731222006104" duration="6007000" />
       <workItem from="1731245073291" duration="7354000" />
-      <workItem from="1731417589409" duration="7919000" />
+      <workItem from="1731417589409" duration="8775000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -404,7 +390,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731252181773</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add Exporter">
+      <option name="closed" value="true" />
+      <created>1731425876152</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731425876152</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add Exporter test">
+      <option name="closed" value="true" />
+      <created>1731425895241</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1731425895241</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +443,9 @@
     <MESSAGE value="add ConsumerInvoker" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="add ProtocolConsumerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ProtocolConsumerTest" />
+    <MESSAGE value="add Exporter" />
+    <MESSAGE value="add Exporter test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Exporter test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

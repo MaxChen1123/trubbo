@@ -53,8 +53,10 @@ public class RpcFuture extends CompletableFuture<Response> {
         if (!isTimeout) {
             Timeout _timeout = TIMEOUT_MAP.get(requestId);
             _timeout.cancel();
+            this.complete(response);
+        } else if (response.isException()) {
+            this.completeExceptionally(response.getException());
         }
-        this.complete(response);
     }
 
     public static void receiveResponse(Response response) {
