@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="idea workspace.xml changed">
+      <change afterPath="$PROJECT_DIR$/trubbo-common/src/test/java/UrlTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/RpcFuture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +64,7 @@
     "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
     "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
     "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
+    "JUnit.UrlTest.url_path_test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -154,17 +157,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RpcFutureTest.rpcTest_server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trubbo-remoting" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="RpcFutureTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="RpcFutureTest" />
-      <option name="MAIN_CLASS_NAME" value="RpcFutureTest.RpcFutureTest" />
-      <option name="METHOD_NAME" value="rpcTest_server" />
+    <configuration name="UrlTest.url_path_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-common" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UrlTest" />
+      <option name="METHOD_NAME" value="url_path_test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,9 +171,9 @@
       <list>
         <item itemvalue="JUnit.ProtocolConsumerTest.consumerInvoker_test" />
         <item itemvalue="JUnit.ProtocolConsumerTest.rpcTest_exporter" />
+        <item itemvalue="JUnit.UrlTest.url_path_test" />
         <item itemvalue="JUnit.ProtocolConsumerTest.rpcTest_server" />
         <item itemvalue="JUnit.RpcFutureTest.rpcTest_client" />
-        <item itemvalue="JUnit.RpcFutureTest.rpcTest_server" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +202,8 @@
       <workItem from="1731163025442" duration="1307000" />
       <workItem from="1731222006104" duration="6007000" />
       <workItem from="1731245073291" duration="7354000" />
-      <workItem from="1731417589409" duration="9372000" />
+      <workItem from="1731417589409" duration="9638000" />
+      <workItem from="1731505759869" duration="1769000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -415,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731426972446</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="idea workspace.xml changed">
+      <option name="closed" value="true" />
+      <created>1731427184600</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1731427184600</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +460,8 @@
     <MESSAGE value="add Exporter" />
     <MESSAGE value="add Exporter test" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="idea workspace.xml changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea workspace.xml changed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
