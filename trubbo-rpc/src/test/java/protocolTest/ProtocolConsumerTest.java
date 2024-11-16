@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
@@ -30,12 +31,16 @@ public class ProtocolConsumerTest {
                 .argsTypes(new Class[]{String.class, int.class})
                 .serviceName("ttt.TestService")
                 .methodName("testMethod")
-                .url(new URL("http://localhost:8080?timeout=1000&service=ttt.TestService"))
+                .url(new URL("http://localhost:8080?service=ttt.TestService"))
                 .build();
-        InvocationResult invoke = refer.invoke(inv);
-        Response response = invoke.get();
-        System.out.println(response.getReturnType());
-        System.out.println(response.getResult());
+        ArrayList<InvocationResult> invocationResults = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            inv.setArgs(new Object[]{"test" + i, i});
+            invocationResults.add(refer.invoke(inv));
+        }
+        for (InvocationResult invocationResult : invocationResults) {
+            log.info("result: {}", invocationResult.get());
+        }
         Thread.sleep(60 * 1000);
     }
 
@@ -111,6 +116,7 @@ public class ProtocolConsumerTest {
                             .returnType(re.getClass())
                             .requestId(RpcContext.getContext().getRequestId())
                             .build();
+                    log.info("provider response: {}", build);
                     return new ProviderInvocationResult(build);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
