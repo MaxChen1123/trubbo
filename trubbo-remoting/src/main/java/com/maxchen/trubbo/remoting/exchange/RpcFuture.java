@@ -52,7 +52,9 @@ public class RpcFuture extends CompletableFuture<Response> {
         CHANNEL_MAP.remove(requestId);
         if (!isTimeout) {
             Timeout _timeout = TIMEOUT_MAP.get(requestId);
-            _timeout.cancel();
+            if (_timeout != null) {
+                _timeout.cancel();
+            }
             this.complete(response);
         } else if (response.isException()) {
             this.completeExceptionally(response.getException());
