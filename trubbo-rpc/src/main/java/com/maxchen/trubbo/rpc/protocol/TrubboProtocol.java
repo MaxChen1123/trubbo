@@ -1,10 +1,8 @@
 package com.maxchen.trubbo.rpc.protocol;
 
-import com.alibaba.ttl.threadpool.TtlExecutors;
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.common.URL.UrlConstant;
-import com.maxchen.trubbo.common.util.NamedThreadFactory;
 import com.maxchen.trubbo.remoting.exchange.HeaderExchangeClient;
 import com.maxchen.trubbo.remoting.exchange.HeaderExchangeServer;
 import com.maxchen.trubbo.remoting.exchange.Request;
@@ -22,7 +20,8 @@ import com.maxchen.trubbo.rpc.protocol.provider.ProviderInvocation;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class TrubboProtocol {
     private static final Map<String, List<ExchangeClient>> CLIENT_MAP = new ConcurrentHashMap<>();
@@ -31,10 +30,6 @@ public class TrubboProtocol {
     private static final Map<String, Exporter> EXPORTER_MAP = new ConcurrentHashMap<>();
     private static final Map<Integer, ExchangeServer> SERVER_MAP = new ConcurrentHashMap<>(); //key:port
 
-    private static final ExecutorService PROTOCOL_EXECUTOR = TtlExecutors.getTtlExecutorService(
-            //TODO configuration
-            new ThreadPoolExecutor(4, 10, 60, TimeUnit.SECONDS, new SynchronousQueue<>()
-                    , new NamedThreadFactory("Trubbo-Completable-Executor")));
 
     /**
      * url should have serviceName
@@ -134,11 +129,8 @@ public class TrubboProtocol {
             if (message instanceof Request request) {
                 Exporter exporter = EXPORTER_MAP.get(request.getServiceName());
                 ProviderInvocation providerInvocation = new ProviderInvocation(request);
-                assert PROTOCOL_EXECUTOR != null;
-                PROTOCOL_EXECUTOR.execute(() -> {
-                    InvocationResult result = exporter.invoke(providerInvocation);
-                    response(result.get(), channel);
-                });
+                InvocationResult result = exporter.invoke(providerInvocation);
+                response(result.get(), channel);
             }
         }
 

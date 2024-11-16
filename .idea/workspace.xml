@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="idea workspace.xml changed">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
       <change afterPath="$PROJECT_DIR$/trubbo-common/src/test/java/UrlTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/DispatcherHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/AbstractChannelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/AbstractChannelHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/ChannelHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/ChannelHandlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/HeaderExchangeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeartBeatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/HeartBeatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
     </list>
@@ -52,37 +60,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.HeaderExchangeTest.exchangeServer_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.request_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.server.executor": "Run",
-    "JUnit.NettyTest.client_test.executor": "Run",
-    "JUnit.NettyTest.server_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.consumerInvoker_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_exporter.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
-    "JUnit.UrlTest.url_path_test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "settings.editor.splitter.proportion": "0.2517839",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.HeaderExchangeTest.exchangeServer_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.request_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.client_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.server_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.consumerInvoker_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_exporter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_client.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UrlTest.url_path_test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2517839&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.maxchen.trubbo.remoting" />
@@ -203,7 +211,9 @@
       <workItem from="1731222006104" duration="6007000" />
       <workItem from="1731245073291" duration="7354000" />
       <workItem from="1731417589409" duration="9638000" />
-      <workItem from="1731505759869" duration="1769000" />
+      <workItem from="1731505759869" duration="7362000" />
+      <workItem from="1731513499995" duration="671000" />
+      <workItem from="1731741783554" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -421,7 +431,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731427184600</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add thread pool">
+      <option name="closed" value="true" />
+      <created>1731507935278</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1731507935278</updated>
+    </task>
+    <task id="LOCAL-00029" summary="bugfix">
+      <option name="closed" value="true" />
+      <created>1731743406582</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1731743406582</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,9 +485,10 @@
     <MESSAGE value="add ProtocolConsumerTest" />
     <MESSAGE value="add Exporter" />
     <MESSAGE value="add Exporter test" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="idea workspace.xml changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="idea workspace.xml changed" />
+    <MESSAGE value="add thread pool" />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

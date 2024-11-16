@@ -1,6 +1,5 @@
-package com.maxchen.trubbo.remoting.exchange;
+package com.maxchen.trubbo.remoting.exchange.handler;
 
-import com.maxchen.trubbo.remoting.AbstractChannelHandler;
 import com.maxchen.trubbo.remoting.netty.NettyChannel;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;

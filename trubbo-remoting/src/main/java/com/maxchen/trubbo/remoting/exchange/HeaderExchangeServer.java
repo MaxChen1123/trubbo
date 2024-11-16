@@ -12,7 +12,7 @@ public class HeaderExchangeServer implements ExchangeServer {
     public HeaderExchangeServer(ChannelHandler handler) {
         RpcContext context = RpcContext.getContext();
         int port = context.getUrl().getPort();
-        this.nettyServer = new NettyServer(port, handler);
+        this.nettyServer = new NettyServer(port, ChannelHandlers.getServerChannelHandler(handler));
     }
 
     @Override
