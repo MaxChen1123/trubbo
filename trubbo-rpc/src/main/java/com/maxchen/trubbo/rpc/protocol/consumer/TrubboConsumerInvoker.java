@@ -30,15 +30,15 @@ public class TrubboConsumerInvoker implements Invoker {
     @Override
     public InvocationResult invoke(Invocation invocation) {
         RpcContext context = RpcContext.getContext();
-        context.setUrl(invocation.getUrl());
+//        context.setUrl(invocation.getUrl());
         context.setOneWay(invocation.isOneWay());
         context.setAsync(invocation.isAsync());
 
         Request request = invocation.toRequest();
         context.setRequest(true);
         context.setRequestId(request.getRequestId());
-
-        ExchangeClient client = choseClient(clients);
+        //TODO request attachment config
+        ExchangeClient client = chooseClient(clients);
         if (context.isOneWay()) {
             client.send(request);
             return null;
@@ -47,7 +47,7 @@ public class TrubboConsumerInvoker implements Invoker {
         return new ConsumerInvocationResult(resultFuture);
     }
 
-    private ExchangeClient choseClient(List<ExchangeClient> clients) {
+    private ExchangeClient chooseClient(List<ExchangeClient> clients) {
         int i = ThreadLocalRandom.current().nextInt(clients.size());
         return clients.get(i);
     }

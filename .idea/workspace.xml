@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
-      <change afterPath="$PROJECT_DIR$/trubbo-common/src/test/java/UrlTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/DispatcherHandler.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="update test">
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/JdkProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/AbstractChannelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/AbstractChannelHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/ChannelHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/ChannelHandlers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/HeaderExchangeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeartBeatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/handler/HeartBeatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/InvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/InvocationResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocationResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,37 +63,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.HeaderExchangeTest.exchangeServer_test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HeaderExchangeTest.request_test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HeaderExchangeTest.server.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NettyTest.client_test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NettyTest.server_test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProtocolConsumerTest.consumerInvoker_test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProtocolConsumerTest.rpcTest_exporter.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProtocolConsumerTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RpcFutureTest.rpcTest_client.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RpcFutureTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UrlTest.url_path_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2517839&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.HeaderExchangeTest.exchangeServer_test.executor": "Run",
+    "JUnit.HeaderExchangeTest.request_test.executor": "Run",
+    "JUnit.HeaderExchangeTest.server.executor": "Run",
+    "JUnit.NettyTest.client_test.executor": "Run",
+    "JUnit.NettyTest.server_test.executor": "Run",
+    "JUnit.ProtocolConsumerTest.Proxy_test.executor": "Run",
+    "JUnit.ProtocolConsumerTest.consumerInvoker_test.executor": "Run",
+    "JUnit.ProtocolConsumerTest.rpcTest_exporter.executor": "Run",
+    "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
+    "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
+    "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
+    "JUnit.UrlTest.url_path_test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.splitter.proportion": "0.2517839",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.maxchen.trubbo.remoting" />
@@ -100,7 +104,43 @@
       <recent name="com.maxchen.trubbo.remoting" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProtocolConsumerTest.consumerInvoker_test">
+  <component name="RunManager" selected="JUnit.ProtocolConsumerTest.Proxy_test">
+    <configuration name="NettyTest.client_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-remoting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NettyTest" />
+      <option name="METHOD_NAME" value="client_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyTest.server_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-remoting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NettyTest" />
+      <option name="METHOD_NAME" value="server_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProtocolConsumerTest.Proxy_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-rpc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="protocolTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="protocolTest" />
+      <option name="MAIN_CLASS_NAME" value="protocolTest.ProtocolConsumerTest" />
+      <option name="METHOD_NAME" value="Proxy_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProtocolConsumerTest.consumerInvoker_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-rpc" />
       <extension name="coverage">
@@ -133,55 +173,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProtocolConsumerTest.rpcTest_server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trubbo-rpc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="protocolTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="protocolTest" />
-      <option name="MAIN_CLASS_NAME" value="protocolTest.ProtocolConsumerTest" />
-      <option name="METHOD_NAME" value="rpcTest_server" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RpcFutureTest.rpcTest_client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trubbo-remoting" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="RpcFutureTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="RpcFutureTest" />
-      <option name="MAIN_CLASS_NAME" value="RpcFutureTest.RpcFutureTest" />
-      <option name="METHOD_NAME" value="rpcTest_client" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UrlTest.url_path_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trubbo-common" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UrlTest" />
-      <option name="METHOD_NAME" value="url_path_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProtocolConsumerTest.consumerInvoker_test" />
+        <item itemvalue="JUnit.ProtocolConsumerTest.Proxy_test" />
         <item itemvalue="JUnit.ProtocolConsumerTest.rpcTest_exporter" />
-        <item itemvalue="JUnit.UrlTest.url_path_test" />
-        <item itemvalue="JUnit.ProtocolConsumerTest.rpcTest_server" />
-        <item itemvalue="JUnit.RpcFutureTest.rpcTest_client" />
+        <item itemvalue="JUnit.ProtocolConsumerTest.consumerInvoker_test" />
+        <item itemvalue="JUnit.NettyTest.client_test" />
+        <item itemvalue="JUnit.NettyTest.server_test" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +211,8 @@
       <workItem from="1731417589409" duration="9638000" />
       <workItem from="1731505759869" duration="7362000" />
       <workItem from="1731513499995" duration="671000" />
-      <workItem from="1731741783554" duration="1747000" />
+      <workItem from="1731741783554" duration="8745000" />
+      <workItem from="1731767304269" duration="4975000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -447,7 +446,47 @@
       <option name="project" value="LOCAL" />
       <updated>1731743406582</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix bug that threadLocal shared in different thread">
+      <option name="closed" value="true" />
+      <created>1731743561915</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1731743561915</updated>
+    </task>
+    <task id="LOCAL-00031" summary="add DispatcherHandler to support threadPool">
+      <option name="closed" value="true" />
+      <created>1731743606554</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1731743606554</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add url test">
+      <option name="closed" value="true" />
+      <created>1731743745568</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1731743745568</updated>
+    </task>
+    <task id="LOCAL-00033" summary="add Multitask test">
+      <option name="closed" value="true" />
+      <created>1731743782439</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1731743782439</updated>
+    </task>
+    <task id="LOCAL-00034" summary="update test">
+      <option name="closed" value="true" />
+      <created>1731746149006</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1731746149006</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,9 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Client and Server" />
-    <MESSAGE value="implement basic Netty client and server" />
-    <MESSAGE value="update test unit" />
     <MESSAGE value="change package structure" />
     <MESSAGE value="add KryoSerializer" />
     <MESSAGE value="KryoSerializer Test" />
@@ -488,7 +524,12 @@
     <MESSAGE value="idea workspace.xml changed" />
     <MESSAGE value="add thread pool" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="fix bug that threadLocal shared in different thread" />
+    <MESSAGE value="add DispatcherHandler to support threadPool" />
+    <MESSAGE value="add url test" />
+    <MESSAGE value="add Multitask test" />
+    <MESSAGE value="update test" />
+    <option name="LAST_COMMIT_MESSAGE" value="update test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

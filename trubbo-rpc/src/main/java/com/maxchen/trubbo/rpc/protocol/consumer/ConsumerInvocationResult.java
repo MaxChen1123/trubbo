@@ -22,4 +22,9 @@ public class ConsumerInvocationResult implements InvocationResult {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public Future<Response> getFuture() {
+        return future;
+    }
 }

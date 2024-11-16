@@ -13,8 +13,12 @@ import com.maxchen.trubbo.rpc.protocol.api.Invoker;
 import com.maxchen.trubbo.rpc.protocol.consumer.ConsumerInvocation;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderInvocation;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderInvocationResult;
+import com.maxchen.trubbo.rpc.proxy.JdkProxyFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import ttt.TestService;
+import ttt.TestServiceImpl;
+import ttt.User;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -41,6 +45,21 @@ public class ProtocolConsumerTest {
         for (InvocationResult invocationResult : invocationResults) {
             log.info("result: {}", invocationResult.get());
         }
+        Thread.sleep(60 * 1000);
+    }
+
+    @Test
+    public void Proxy_test() throws Exception {
+        Invoker refer = TrubboProtocol.refer(new URL("http://localhost:8080?service=ttt.TestService"));
+        TestService proxy = JdkProxyFactory.getProxy(TestService.class, refer);
+        String m1 = proxy.testMethod("This message is from testMethod", 1);
+        log.info("testMethod result: {}", m1);
+        CompletableFuture<String> m2 = proxy.testMethodAsync("This message is from testMethodAsync", 2);
+        m2.thenAccept(result -> log.info("testMethodAsync result: {}", result));
+        User user = proxy.testUser(1);
+        log.info("testUser result: {}", user);
+        CompletableFuture<User> user2 = proxy.testUserAsync(2);
+        user2.thenAccept(result -> log.info("testUserAsync result: {}", result));
         Thread.sleep(60 * 1000);
     }
 
@@ -97,23 +116,23 @@ public class ProtocolConsumerTest {
     }
 
     static class TestInvoker implements Invoker {
+        private static final TestServiceImpl impl = new TestServiceImpl();
 
         @Override
         public InvocationResult invoke(Invocation invocation) {
             if (invocation instanceof ProviderInvocation providerInvocation) {
                 String serviceName = providerInvocation.getServiceName();
                 try {
-                    Class<?> aClass = Class.forName(serviceName);
+                    Class<?> aClass = Class.forName(serviceName + "Impl");
                     Method method = aClass.getMethod(providerInvocation.getMethodName(), providerInvocation.getArgsTypes());
-                    Object invoke = method.invoke(aClass.getDeclaredConstructor().newInstance(), providerInvocation.getArgs());
-                    Object re = null;
+                    Object invoke = method.invoke(impl, providerInvocation.getArgs());
                     if (invoke instanceof CompletableFuture<?> c) {
-                        re = c.get();
+                        invoke = c.get();
                     }
 
                     Response build = Response.builder()
-                            .result(re)
-                            .returnType(re.getClass())
+                            .result(invoke)
+                            .returnType(invoke == null ? null : invoke.getClass())
                             .requestId(RpcContext.getContext().getRequestId())
                             .build();
                     log.info("provider response: {}", build);
@@ -124,6 +143,11 @@ public class ProtocolConsumerTest {
             }
             log.warn("not support invocation type");
             return null;
+        }
+
+        @Override
+        public String getServiceName() {
+            return "";
         }
     }
 }

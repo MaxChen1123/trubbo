@@ -24,13 +24,14 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         RpcContext context = RpcContext.getContext();
         RpcFuture future;
         URL url = context.getUrl();
-        String timeout = url.getParameter(UrlConstant.TIMEOUT_KEY);
+        //String timeout = url.getParameter(UrlConstant.TIMEOUT_KEY);
+        String timeout = (String) request.getAttachment(UrlConstant.TIMEOUT_KEY);
         if (timeout != null) {
             future = RpcFuture.newFuture(this, request, Long.parseLong(timeout));
         } else {
             future = RpcFuture.newFuture(this, request);
         }
-        client.send(message);
+        client.send(request);
         return future;
     }
 

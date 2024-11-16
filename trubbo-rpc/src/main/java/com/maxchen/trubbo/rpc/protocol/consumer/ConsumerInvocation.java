@@ -6,6 +6,7 @@ import com.maxchen.trubbo.rpc.protocol.api.Invocation;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 
@@ -29,6 +30,7 @@ public class ConsumerInvocation implements Invocation {
                 .argsTypes(argsTypes)
                 .serviceName(serviceName)
                 .methodName(methodName)
+                .attachments(new HashMap<>(8))
                 .build();
     }
 }

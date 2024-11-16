@@ -15,5 +15,17 @@ public class Request implements Serializable {
     private String methodName; //the service interface method to be invoked
     private Class<?>[] argsTypes;
     private Object[] args;
-    private Map<String, Object> attachments;
+    private transient Map<String, Object> attachments;
+
+    public void setAttachment(String key, Object value) {
+        attachments.put(key, value);
+    }
+
+    public Object getAttachment(String key) {
+        return attachments.get(key);
+    }
+
+    public Object getAttachment(String key, Object defaultValue) {
+        return attachments.getOrDefault(key, defaultValue);
+    }
 }
