@@ -1,6 +1,5 @@
 package com.maxchen.trubbo.common;
 
-import com.alibaba.ttl.TransmittableThreadLocal;
 import com.maxchen.trubbo.common.URL.URL;
 import lombok.Data;
 
@@ -8,12 +7,7 @@ import java.net.URISyntaxException;
 
 @Data
 public class RpcContext {
-    private static final TransmittableThreadLocal<RpcContext> LOCAL = new TransmittableThreadLocal<>() {
-        @Override
-        protected RpcContext initialValue() {
-            return new RpcContext();
-        }
-    };
+    private static final ThreadLocal<RpcContext> LOCAL = ThreadLocal.withInitial(RpcContext::new);
     private volatile URL url;
     private volatile long requestId;
     private volatile boolean isRequest;
