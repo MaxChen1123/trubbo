@@ -1,5 +1,5 @@
-import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
-import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
+import com.maxchen.trubbo.common.RpcContext;
+import com.maxchen.trubbo.remoting.exchange.Request;
 import com.maxchen.trubbo.remoting.netty.NettyClient;
 import com.maxchen.trubbo.remoting.netty.NettyServer;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
@@ -17,13 +17,19 @@ public class NettyTest {
     }
 
     @Test
-    public void client_test() {
+    public void client_test() throws NoSuchMethodException {
         NettyClient nettyClient = new NettyClient("localhost", 8080, new TestHandler());
         nettyClient.connect();
         int age = 18;
         while (true) {
-            nettyClient.send(new TrubboMessage(new TrubboHeader((byte) 0, 1, 0)
-                    , new User("maxchen", age++)));
+            RpcContext context = RpcContext.getContext();
+            context.setRequest(true);
+            context.setRequestId(1);
+            nettyClient.send(
+                    Request.builder()
+                            .requestId(1)
+                            .args(new Object[]{new User("maxchen", age++)})
+                            .build());
             System.out.println("send");
             try {
                 Thread.sleep(1000);
