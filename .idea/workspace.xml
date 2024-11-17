@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="update test">
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/JdkProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/User.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add JdkProxyFactory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/HeaderExchangeChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/exchange/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/InvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/InvocationResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/api/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvocationResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/protocolTest/ProtocolConsumerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/test/java/ttt/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,38 +51,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.HeaderExchangeTest.exchangeServer_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.request_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.server.executor": "Run",
-    "JUnit.NettyTest.client_test.executor": "Run",
-    "JUnit.NettyTest.server_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.Proxy_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.consumerInvoker_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_exporter.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
-    "JUnit.UrlTest.url_path_test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "settings.editor.splitter.proportion": "0.2517839",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.HeaderExchangeTest.exchangeServer_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.request_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.client_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.server_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.Proxy_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.consumerInvoker_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_exporter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_client.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UrlTest.url_path_test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2517839&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.maxchen.trubbo.remoting" />
@@ -212,7 +200,8 @@
       <workItem from="1731505759869" duration="7362000" />
       <workItem from="1731513499995" duration="671000" />
       <workItem from="1731741783554" duration="8745000" />
-      <workItem from="1731767304269" duration="4975000" />
+      <workItem from="1731767304269" duration="5931000" />
+      <workItem from="1731850621143" duration="353000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -486,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731746149006</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add JdkProxyFactory">
+      <option name="closed" value="true" />
+      <created>1731772575112</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1731772575112</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change package structure" />
     <MESSAGE value="add KryoSerializer" />
     <MESSAGE value="KryoSerializer Test" />
     <MESSAGE value="HeaderExchangeClient completed" />
@@ -529,7 +525,8 @@
     <MESSAGE value="add url test" />
     <MESSAGE value="add Multitask test" />
     <MESSAGE value="update test" />
-    <option name="LAST_COMMIT_MESSAGE" value="update test" />
+    <MESSAGE value="add JdkProxyFactory" />
+    <option name="LAST_COMMIT_MESSAGE" value="add JdkProxyFactory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
