@@ -8,6 +8,7 @@ import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.retry.RetryNTimes;
 import org.apache.zookeeper.KeeperException;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -16,6 +17,7 @@ public class ZookeeperClient {
     private final CuratorFramework client;
     private final URL url;
     private static final Map<String, CuratorCache> CACHE_MAP = new ConcurrentHashMap<>();
+    private static final Map<String, ZookeeperListener> LISTENER_MAP = new ConcurrentHashMap<>();
 
     public ZookeeperClient(URL url) {
         try {
@@ -80,8 +82,39 @@ public class ZookeeperClient {
 
     public void watchPath(String path, ZookeeperListener listener) {
         CuratorCache cache = CACHE_MAP.computeIfAbsent(path, k -> CuratorCache.build(client, path));
+        LISTENER_MAP.put(path, listener);
         cache.listenable().addListener(listener);
         cache.start();
+    }
+
+    public void unwatchPath(String path) {
+        CuratorCache cache = CACHE_MAP.remove(path);
+        ZookeeperListener listener = LISTENER_MAP.remove(path);
+        cache.close();
+    }
+
+    public List<String> getChildren(String path) {
+        try {
+            return client.getChildren().forPath(path);
+        } catch (KeeperException.NoNodeException e) {
+            return null;
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getMessage(), e);
+        }
+    }
+
+    public boolean checkExists(String path) {
+        try {
+            if (client.checkExists().forPath(path) != null) {
+                return true;
+            }
+        } catch (Exception e) {
+        }
+        return false;
+    }
+
+    public boolean isConnected() {
+        return client.getZookeeperClient().isConnected();
     }
 
 

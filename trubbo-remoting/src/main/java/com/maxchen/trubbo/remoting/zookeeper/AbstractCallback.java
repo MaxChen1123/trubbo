@@ -13,6 +13,9 @@ public abstract class AbstractCallback implements ListenerCallback {
 
     @Override
     public void callback(CuratorCacheListener.Type type, ChildData data, ChildData oldData) {
+        doCallback(type, data, oldData);
         next.callback(type, data, oldData);
     }
+
+    public abstract void doCallback(CuratorCacheListener.Type type, ChildData data, ChildData oldData);
 }

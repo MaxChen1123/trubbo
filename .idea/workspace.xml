@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/AbstractCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/api/ListenerCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/ZookeeperTest/ZookeeperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/URL/URL.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/URL/URL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add Zookeeper test">
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/AbstractCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/AbstractCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +215,7 @@
       <workItem from="1731741783554" duration="8745000" />
       <workItem from="1731767304269" duration="5931000" />
       <workItem from="1731850621143" duration="7095000" />
-      <workItem from="1731939929972" duration="4676000" />
+      <workItem from="1731939929972" duration="5428000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -513,7 +505,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731851180380</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="add Zookeeper client">
+      <option name="closed" value="true" />
+      <created>1731944861375</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1731944861375</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add Zookeeper test">
+      <option name="closed" value="true" />
+      <created>1731944884022</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1731944884022</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,8 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add KryoSerializer" />
-    <MESSAGE value="KryoSerializer Test" />
     <MESSAGE value="HeaderExchangeClient completed" />
     <MESSAGE value="optimize Channel interface" />
     <MESSAGE value="add HeaderExchangeServer" />
@@ -556,7 +562,9 @@
     <MESSAGE value="update test" />
     <MESSAGE value="add JdkProxyFactory" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="add Zookeeper client" />
+    <MESSAGE value="add Zookeeper test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Zookeeper test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
