@@ -73,12 +73,12 @@ public class URL implements Serializable {
         return parameters.get(key);
     }
 
-    public String getProviderAddress() {
+    public String getRemoteAddress() {
         return host + ":" + port;
     }
 
     public String getInvokerKey() {
-        return getParameter(UrlConstant.SERVICE_KEY) + ":" + getProviderAddress();
+        return getParameter(UrlConstant.SERVICE_KEY) + ":" + getRemoteAddress();
     }
 
     private int getDefaultPort() {

@@ -58,11 +58,11 @@ public class TrubboProtocol {
     }
 
     private static List<ExchangeClient> getClients(URL url) {
-        List<ExchangeClient> exchangeClients = CLIENT_MAP.get(url.getProviderAddress());
+        List<ExchangeClient> exchangeClients = CLIENT_MAP.get(url.getRemoteAddress());
         if (exchangeClients == null) {
             exchangeClients = new CopyOnWriteArrayList<>();
             exchangeClients.add(getExchangeClient(url));
-            CLIENT_MAP.put(url.getProviderAddress(), exchangeClients);
+            CLIENT_MAP.put(url.getRemoteAddress(), exchangeClients);
         } else {
             // TODO configuration
             if (exchangeClients.size() < 3) {
