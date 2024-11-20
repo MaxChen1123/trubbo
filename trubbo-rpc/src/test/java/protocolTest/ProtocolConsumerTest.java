@@ -2,10 +2,10 @@ package protocolTest;
 
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
-import com.maxchen.trubbo.remoting.exchange.HeaderExchangeServer;
-import com.maxchen.trubbo.remoting.exchange.Response;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
+import com.maxchen.trubbo.remoting.netty.exchange.HeaderExchangeServer;
+import com.maxchen.trubbo.remoting.netty.exchange.Response;
 import com.maxchen.trubbo.rpc.protocol.TrubboProtocol;
 import com.maxchen.trubbo.rpc.protocol.api.Invocation;
 import com.maxchen.trubbo.rpc.protocol.api.InvocationResult;

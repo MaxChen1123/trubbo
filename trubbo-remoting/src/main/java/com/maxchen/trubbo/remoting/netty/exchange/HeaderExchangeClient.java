@@ -1,11 +1,11 @@
-package com.maxchen.trubbo.remoting.exchange;
+package com.maxchen.trubbo.remoting.netty.exchange;
 
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
-import com.maxchen.trubbo.remoting.exchange.api.ExchangeChannel;
-import com.maxchen.trubbo.remoting.exchange.api.ExchangeClient;
 import com.maxchen.trubbo.remoting.netty.NettyClient;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
+import com.maxchen.trubbo.remoting.netty.exchange.api.ExchangeChannel;
+import com.maxchen.trubbo.remoting.netty.exchange.api.ExchangeClient;
 
 import java.util.concurrent.Future;
 

@@ -1,10 +1,8 @@
-package com.maxchen.trubbo.remoting.codec.protocol;
+package com.maxchen.trubbo.remoting.netty.codec.protocol;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
 
 @Data
 @AllArgsConstructor

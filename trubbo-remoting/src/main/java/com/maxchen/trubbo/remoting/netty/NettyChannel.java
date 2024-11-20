@@ -2,9 +2,9 @@ package com.maxchen.trubbo.remoting.netty;
 
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.util.TrubboProtocolUtil;
-import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
-import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
+import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboHeader;
+import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboMessage;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,9 +1,9 @@
-package com.maxchen.trubbo.remoting.codec;
+package com.maxchen.trubbo.remoting.netty.codec;
 
-import com.maxchen.trubbo.remoting.codec.protocol.TrubboHeader;
-import com.maxchen.trubbo.remoting.codec.protocol.TrubboMessage;
-import com.maxchen.trubbo.remoting.codec.serialization.KyroSerializer;
-import com.maxchen.trubbo.remoting.codec.serialization.Serialization;
+import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboHeader;
+import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboMessage;
+import com.maxchen.trubbo.remoting.netty.codec.serialization.KyroSerializer;
+import com.maxchen.trubbo.remoting.netty.codec.serialization.Serialization;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

@@ -1,9 +1,9 @@
 import com.maxchen.trubbo.common.RpcContext;
-import com.maxchen.trubbo.remoting.exchange.Request;
 import com.maxchen.trubbo.remoting.netty.NettyClient;
 import com.maxchen.trubbo.remoting.netty.NettyServer;
 import com.maxchen.trubbo.remoting.netty.api.Channel;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
+import com.maxchen.trubbo.remoting.netty.exchange.Request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.junit.jupiter.api.Test;

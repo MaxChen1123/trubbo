@@ -1,7 +1,7 @@
 package com.maxchen.trubbo.rpc.proxy;
 
 import com.maxchen.trubbo.common.exception.RpcTimeoutException;
-import com.maxchen.trubbo.remoting.exchange.Response;
+import com.maxchen.trubbo.remoting.netty.exchange.Response;
 import com.maxchen.trubbo.rpc.protocol.api.InvocationResult;
 import com.maxchen.trubbo.rpc.protocol.api.Invoker;
 import com.maxchen.trubbo.rpc.protocol.consumer.ConsumerInvocation;

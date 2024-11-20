@@ -1,8 +1,8 @@
 package com.maxchen.trubbo.remoting.netty;
 
-import com.maxchen.trubbo.remoting.codec.TrubboCodec;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
 import com.maxchen.trubbo.remoting.netty.api.Client;
+import com.maxchen.trubbo.remoting.netty.codec.TrubboCodec;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;

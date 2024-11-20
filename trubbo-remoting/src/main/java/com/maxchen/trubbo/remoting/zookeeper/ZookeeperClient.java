@@ -1,11 +1,13 @@
 package com.maxchen.trubbo.remoting.zookeeper;
 
 import com.maxchen.trubbo.common.URL.URL;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.retry.RetryNTimes;
+import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class ZookeeperClient {
     private final CuratorFramework client;
+    @Getter
     private final URL url;
     private static final Map<String, CuratorCache> CACHE_MAP = new ConcurrentHashMap<>();
     private static final Map<String, ZookeeperListener> LISTENER_MAP = new ConcurrentHashMap<>();
@@ -33,7 +36,7 @@ public class ZookeeperClient {
 
     public void createPath(String path) {
         try {
-            client.create().creatingParentsIfNeeded().forPath(path);
+            client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(path);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -51,7 +54,7 @@ public class ZookeeperClient {
 
     public void createPath(String path, String data) {
         try {
-            client.create().creatingParentsIfNeeded().forPath(path, data.getBytes());
+            client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(path, data.getBytes());
         } catch (KeeperException.NodeExistsException e) {
             try {
                 client.setData().forPath(path, data.getBytes());

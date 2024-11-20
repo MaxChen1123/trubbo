@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.exchange;
+package com.maxchen.trubbo.remoting.netty.exchange;
 
 import lombok.Builder;
 import lombok.Data;

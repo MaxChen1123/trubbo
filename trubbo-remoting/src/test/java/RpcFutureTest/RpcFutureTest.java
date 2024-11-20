@@ -1,11 +1,11 @@
 package RpcFutureTest;
 
 import com.maxchen.trubbo.common.RpcContext;
-import com.maxchen.trubbo.remoting.exchange.HeaderExchangeClient;
-import com.maxchen.trubbo.remoting.exchange.HeaderExchangeServer;
-import com.maxchen.trubbo.remoting.exchange.Request;
-import com.maxchen.trubbo.remoting.exchange.Response;
 import com.maxchen.trubbo.remoting.netty.api.ChannelHandler;
+import com.maxchen.trubbo.remoting.netty.exchange.HeaderExchangeClient;
+import com.maxchen.trubbo.remoting.netty.exchange.HeaderExchangeServer;
+import com.maxchen.trubbo.remoting.netty.exchange.Request;
+import com.maxchen.trubbo.remoting.netty.exchange.Response;
 import io.netty.channel.Channel;
 import lombok.AllArgsConstructor;
 import lombok.Data;

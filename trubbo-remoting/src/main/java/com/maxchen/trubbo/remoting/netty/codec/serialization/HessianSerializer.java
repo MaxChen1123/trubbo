@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.codec.serialization;
+package com.maxchen.trubbo.remoting.netty.codec.serialization;
 
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
@@ -6,7 +6,7 @@ import com.caucho.hessian.io.HessianOutput;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-public class HessianSerializer implements Serialization{
+public class HessianSerializer implements Serialization {
 
     @Override
     public byte[] serialize(Object object) throws Exception {

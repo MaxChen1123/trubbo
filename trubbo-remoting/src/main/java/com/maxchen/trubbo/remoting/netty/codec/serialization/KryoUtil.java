@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.codec.serialization;
+package com.maxchen.trubbo.remoting.netty.codec.serialization;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;

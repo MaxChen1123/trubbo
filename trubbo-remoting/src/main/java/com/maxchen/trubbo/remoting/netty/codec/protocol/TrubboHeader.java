@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.codec.protocol;
+package com.maxchen.trubbo.remoting.netty.codec.protocol;
 
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.util.TrubboProtocolUtil;

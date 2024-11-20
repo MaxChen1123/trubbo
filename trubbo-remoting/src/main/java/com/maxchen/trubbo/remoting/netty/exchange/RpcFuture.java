@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.exchange;
+package com.maxchen.trubbo.remoting.netty.exchange;
 
 import com.maxchen.trubbo.common.exception.RpcTimeoutException;
 import com.maxchen.trubbo.common.util.NamedThreadFactory;

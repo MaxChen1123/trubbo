@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.remoting.exchange.api;
+package com.maxchen.trubbo.remoting.netty.exchange.api;
 
 import com.maxchen.trubbo.remoting.netty.api.Server;
 

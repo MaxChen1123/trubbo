@@ -1,7 +1,7 @@
 package com.maxchen.trubbo.rpc.protocol.consumer;
 
 import com.maxchen.trubbo.common.URL.URL;
-import com.maxchen.trubbo.remoting.exchange.Request;
+import com.maxchen.trubbo.remoting.netty.exchange.Request;
 import com.maxchen.trubbo.rpc.protocol.api.Invocation;
 import lombok.Builder;
 import lombok.Data;

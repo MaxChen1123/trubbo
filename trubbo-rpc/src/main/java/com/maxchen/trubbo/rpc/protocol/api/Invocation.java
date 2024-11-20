@@ -1,7 +1,7 @@
 package com.maxchen.trubbo.rpc.protocol.api;
 
 import com.maxchen.trubbo.common.URL.URL;
-import com.maxchen.trubbo.remoting.exchange.Request;
+import com.maxchen.trubbo.remoting.netty.exchange.Request;
 
 public interface Invocation {
     URL getUrl();
