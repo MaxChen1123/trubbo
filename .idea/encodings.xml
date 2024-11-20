@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-registry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-registry/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-remoting/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-remoting/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-rpc/src/main/java" charset="UTF-8" />
