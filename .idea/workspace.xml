@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add util">
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/api/Registry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/test/java/registryTest/RegistryProtocolTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/test/java/registryTest/ttt/TestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add TrubboRegistry test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/ZookeeperPathParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/ZookeeperPathParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/test/java/ZookeeperTest/ZookeeperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/ZookeeperTest/ZookeeperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,45 +51,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.HeaderExchangeTest.exchangeServer_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.request_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.server.executor": "Run",
-    "JUnit.NettyTest.client_test.executor": "Run",
-    "JUnit.NettyTest.server_test.executor": "Run",
-    "JUnit.PathParserTest.test.executor": "Run",
-    "JUnit.PathParserTest.test2.executor": "Run",
-    "JUnit.ProtocolConsumerTest.Proxy_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.consumerInvoker_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_exporter.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
-    "JUnit.RegistryProtocolTest.register_test.executor": "Run",
-    "JUnit.RegistryProtocolTest.subscribe_test.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
-    "JUnit.UrlTest.url_path_test.executor": "Run",
-    "JUnit.ZookeeperTest.client_test.executor": "Run",
-    "JUnit.ZookeeperTest.listener_test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "settings.editor.splitter.proportion": "0.2517839",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.HeaderExchangeTest.exchangeServer_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.request_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.client_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.server_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PathParserTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PathParserTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.Proxy_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.consumerInvoker_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_exporter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegistryProtocolTest.register_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegistryProtocolTest.subscribe_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_client.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UrlTest.url_path_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ZookeeperTest.client_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ZookeeperTest.listener_test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2517839&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.maxchen.trubbo.remoting" />
@@ -109,7 +99,7 @@
       <recent name="com.maxchen.trubbo.remoting" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RegistryProtocolTest.subscribe_test">
+  <component name="RunManager" selected="JUnit.ZookeeperTest.client_test">
     <configuration name="PathParserTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-common" />
       <option name="PACKAGE_NAME" value="" />
@@ -162,7 +152,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZookeeperTest.listener_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ZookeeperTest.client_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-remoting" />
       <extension name="coverage">
         <pattern>
@@ -172,7 +162,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="ZookeeperTest" />
       <option name="MAIN_CLASS_NAME" value="ZookeeperTest.ZookeeperTest" />
-      <option name="METHOD_NAME" value="listener_test" />
+      <option name="METHOD_NAME" value="client_test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ZookeeperTest.client_test" />
         <item itemvalue="JUnit.RegistryProtocolTest.subscribe_test" />
         <item itemvalue="JUnit.RegistryProtocolTest.register_test" />
         <item itemvalue="JUnit.PathParserTest.test2" />
         <item itemvalue="JUnit.PathParserTest.test" />
-        <item itemvalue="JUnit.ZookeeperTest.listener_test" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +211,8 @@
       <workItem from="1731850621143" duration="7095000" />
       <workItem from="1731939929972" duration="5938000" />
       <workItem from="1732104429222" duration="13163000" />
+      <workItem from="1732118358827" duration="100000" />
+      <workItem from="1732282332484" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -550,7 +542,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732112955741</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="add TrubboRegistry">
+      <option name="closed" value="true" />
+      <created>1732118403803</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1732118403803</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add TrubboRegistry test">
+      <option name="closed" value="true" />
+      <created>1732118424076</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1732118424076</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,8 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add HeaderExchangeServer function test" />
-    <MESSAGE value="add function to URL" />
     <MESSAGE value="add timeout detection" />
     <MESSAGE value="TrubboProtocol updated" />
     <MESSAGE value="add HeartBeatHandler" />
@@ -593,7 +599,9 @@
     <MESSAGE value="update ZookeeperClient" />
     <MESSAGE value="adjust structure" />
     <MESSAGE value="add util" />
-    <option name="LAST_COMMIT_MESSAGE" value="add util" />
+    <MESSAGE value="add TrubboRegistry" />
+    <MESSAGE value="add TrubboRegistry test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add TrubboRegistry test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

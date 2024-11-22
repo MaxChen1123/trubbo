@@ -13,8 +13,7 @@ public class ZookeeperTest {
     @Test
     public void client_test() throws Throwable {
         ZookeeperClient zookeeperClient = new ZookeeperClient(new URL("zookeeper://127.0.0.1:2181"));
-        zookeeperClient.deletePath("/trubbo");
-        Thread.sleep(60 * 1000);
+        zookeeperClient.createPath("/trubbo/test/127.0.0.1");
     }
 
     @Test
