@@ -14,12 +14,13 @@ import java.util.concurrent.CompletableFuture;
 public class ProviderInvoker implements Invoker {
     private String serviceName;
     private Object service;
+    private Class<?> serviceClass;
 
     public ProviderInvoker(String serviceName) {
         this.serviceName = serviceName;
         try {
-            Class<?> aClass = Class.forName(serviceName);
-            service = aClass.getConstructor().newInstance();
+            this.serviceClass = Class.forName(serviceName + "Impl");
+            service = serviceClass.getConstructor().newInstance();
         } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
@@ -30,8 +31,7 @@ public class ProviderInvoker implements Invoker {
         if (invocation instanceof ProviderInvocation providerInvocation) {
             String serviceName = providerInvocation.getServiceName();
             try {
-                Class<?> aClass = Class.forName(serviceName + "Impl");
-                Method method = aClass.getMethod(providerInvocation.getMethodName(), providerInvocation.getArgsTypes());
+                Method method = serviceClass.getMethod(providerInvocation.getMethodName(), providerInvocation.getArgsTypes());
                 Object invoke = method.invoke(service, providerInvocation.getArgs());
                 if (invoke instanceof CompletableFuture<?> c) {
                     invoke = c.get();

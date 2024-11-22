@@ -13,6 +13,7 @@
         <module>trubbo-common</module>
         <module>trubbo-rpc</module>
         <module>trubbo-registry</module>
+        <module>trubbo-cluster</module>
     </modules>
 
     <properties>

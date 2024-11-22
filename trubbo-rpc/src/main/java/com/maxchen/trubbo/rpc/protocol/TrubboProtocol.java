@@ -17,6 +17,7 @@ import com.maxchen.trubbo.rpc.protocol.api.Invoker;
 import com.maxchen.trubbo.rpc.protocol.consumer.TrubboConsumerInvoker;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderExporter;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderInvocation;
+import lombok.Getter;
 
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class TrubboProtocol {
     private static final Map<String, List<ExchangeClient>> CLIENT_MAP = new ConcurrentHashMap<>();
+    @Getter
     private static final Map<String, Invoker> INVOKER_MAP = new ConcurrentHashMap<>();
 
     private static final Map<String, Exporter> EXPORTER_MAP = new ConcurrentHashMap<>();
@@ -65,7 +67,7 @@ public class TrubboProtocol {
             CLIENT_MAP.put(url.getRemoteAddress(), exchangeClients);
         } else {
             // TODO configuration
-            if (exchangeClients.size() < 3) {
+            if (exchangeClients.size() < 1) {
                 exchangeClients.add(getExchangeClient(url));
             }
         }
