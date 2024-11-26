@@ -2,7 +2,6 @@ package com.maxchen.trubbo.remoting.netty.exchange;
 
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
-import com.maxchen.trubbo.common.URL.UrlConstant;
 import com.maxchen.trubbo.remoting.netty.api.Client;
 import com.maxchen.trubbo.remoting.netty.exchange.api.ExchangeChannel;
 
@@ -25,7 +24,7 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         RpcFuture future;
         URL url = context.getUrl();
         //String timeout = url.getParameter(UrlConstant.TIMEOUT_KEY);
-        String timeout = (String) request.getAttachment(UrlConstant.TIMEOUT_KEY);
+        String timeout = (String) request.getAttachment("timeout");
         if (timeout != null) {
             future = RpcFuture.newFuture(this, request, Long.parseLong(timeout));
         } else {

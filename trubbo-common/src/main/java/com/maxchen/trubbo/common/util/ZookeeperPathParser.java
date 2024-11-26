@@ -8,7 +8,7 @@ public class ZookeeperPathParser {
 
         String[] segments = path.split("/");
 
-        if (segments.length < 6) {
+        if (segments.length < 5) {
             throw new IllegalArgumentException("Path must contain at least serviceName and address");
         }
         return segments[3];

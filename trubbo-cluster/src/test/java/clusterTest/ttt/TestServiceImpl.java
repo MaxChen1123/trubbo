@@ -30,4 +30,13 @@ public class TestServiceImpl implements TestService {
     public CompletableFuture<User> testUserAsync(int id) {
         return CompletableFuture.supplyAsync(() -> DATABASE.get(id));
     }
+
+    @Override
+    public void testTimeout(long timeout) {
+        try {
+            Thread.sleep(timeout);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

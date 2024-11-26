@@ -4,6 +4,8 @@ import com.maxchen.trubbo.common.URL.URL;
 import lombok.Data;
 
 import java.net.URISyntaxException;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Data
 public class RpcContext {
@@ -14,6 +16,7 @@ public class RpcContext {
     private volatile boolean isHeartBeat;
     private volatile boolean isOneWay;
     private volatile boolean isAsync;
+    private Map<String, String> attachments = new ConcurrentHashMap<>();
 
     //    private String serviceName;
 //    private String methodName;

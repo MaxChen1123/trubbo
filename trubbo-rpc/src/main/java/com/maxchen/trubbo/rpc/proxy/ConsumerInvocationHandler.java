@@ -1,6 +1,5 @@
 package com.maxchen.trubbo.rpc.proxy;
 
-import com.maxchen.trubbo.common.exception.RpcTimeoutException;
 import com.maxchen.trubbo.remoting.netty.exchange.Response;
 import com.maxchen.trubbo.rpc.protocol.api.InvocationResult;
 import com.maxchen.trubbo.rpc.protocol.api.Invoker;
@@ -52,12 +51,7 @@ public class ConsumerInvocationHandler implements InvocationHandler {
             Future<Response> future = result.getFuture();
             return ((CompletableFuture<Response>) future).thenApply(Response::getResult);
         } else {
-            try {
-                Response response = result.get();
-            } catch (RpcTimeoutException e) {
-                //TODO redo
-                throw e;
-            }
+            Response response = result.get();
             return result.get().getResult();
         }
     }

@@ -3,6 +3,7 @@ package clusterTest;
 import clusterTest.ttt.TestService;
 import com.maxchen.trubbo.cluster.ClusterProtocol;
 import com.maxchen.trubbo.common.URL.URL;
+import com.maxchen.trubbo.common.exception.RpcTimeoutException;
 import com.maxchen.trubbo.rpc.protocol.api.Invoker;
 import com.maxchen.trubbo.rpc.proxy.JdkProxyFactory;
 import org.junit.jupiter.api.Test;
@@ -29,5 +30,24 @@ public class ClusterTest {
         proxy.testMethodAsync("helloAsync", 2).thenAccept(System.out::println);
         System.out.println(proxy.testUser(1));
         proxy.testUserAsync(2).thenAccept(System.out::println);
+    }
+
+    @Test
+    public void timeout_test() throws URISyntaxException {
+        ClusterProtocol clusterProtocol = new ClusterProtocol(new URL("zookeeper://127.0.0.1:2181"));
+        Invoker refer = clusterProtocol.refer("clusterTest.ttt.TestService");
+        TestService proxy = JdkProxyFactory.getProxy(TestService.class, refer);
+        try {
+            proxy.testTimeout(3000);
+            System.out.println("3000ms no catch RpcTimeoutException");
+        } catch (RpcTimeoutException e) {
+            System.out.println("3000ms catch RpcTimeoutException");
+        }
+        try {
+            proxy.testTimeout(8000);
+            System.out.println("8000ms no catch RpcTimeoutException");
+        } catch (RpcTimeoutException e) {
+            System.out.println("8000ms catch RpcTimeoutException ");
+        }
     }
 }

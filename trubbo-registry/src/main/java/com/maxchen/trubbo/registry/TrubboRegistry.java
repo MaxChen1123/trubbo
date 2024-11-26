@@ -18,6 +18,7 @@ public class TrubboRegistry implements Registry {
 
     // serviceName -> provider's remoteAddress list, it's for consumer's use
     public static final Map<String, Set<String>> PROVIDER_MAP = new ConcurrentHashMap<>();
+    public static final Map<String, String> CONFIGURATION_MAP = new ConcurrentHashMap<>();
 
     public TrubboRegistry(URL url) {
         this.url = url;
@@ -29,6 +30,10 @@ public class TrubboRegistry implements Registry {
                         .getChildren(RegistryConstants.SERVICE_PATH + "/" + serviceName
                                 + RegistryConstants.PROVIDER_KEY);
                 PROVIDER_MAP.putIfAbsent(serviceName, new CopyOnWriteArraySet<>(providerAddr));
+
+                String config = zookeeperClient.getData(RegistryConstants.SERVICE_PATH + "/" + serviceName
+                        + RegistryConstants.CONFIGURATION_KEY);
+                if (config != null) CONFIGURATION_MAP.put(serviceName, config);
             });
         }
 
@@ -55,5 +60,11 @@ public class TrubboRegistry implements Registry {
     @Override
     public void unsubscribe(URL url) {
 
+    }
+
+    @Override
+    public void watchConfiguration(String serviceName, ZookeeperListener listener) {
+        zookeeperClient.watchPath(RegistryConstants.SERVICE_PATH + "/" +
+                serviceName + RegistryConstants.CONFIGURATION_KEY, listener);
     }
 }

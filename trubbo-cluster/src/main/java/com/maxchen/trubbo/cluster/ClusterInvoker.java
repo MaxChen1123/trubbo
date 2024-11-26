@@ -1,8 +1,10 @@
 package com.maxchen.trubbo.cluster;
 
+import com.maxchen.trubbo.cluster.api.Configuration;
 import com.maxchen.trubbo.cluster.api.LoadBalance;
 import com.maxchen.trubbo.cluster.exception.NoProviderException;
 import com.maxchen.trubbo.cluster.loadbalance.RandomLoadBalance;
+import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.common.URL.UrlConstant;
 import com.maxchen.trubbo.registry.TrubboRegistry;
@@ -19,12 +21,15 @@ public class ClusterInvoker implements Invoker {
     @Getter
     private String serviceName;
     private final ClusterProtocol ClusterProtocol;
+
+    private final Configuration configuration;
     // TODO config
     private static final LoadBalance loadBalance = new RandomLoadBalance();
 
     public ClusterInvoker(String serviceName, ClusterProtocol ClusterProtocol) {
         this.serviceName = serviceName;
         this.ClusterProtocol = ClusterProtocol;
+        this.configuration = new ServiceConfiguration(serviceName);
     }
 
     // TODO retry
@@ -42,6 +47,10 @@ public class ClusterInvoker implements Invoker {
             URL serviceUrl = getServiceUrl(serviceName, address);
             invoker = TrubboProtocol.refer(serviceUrl);
         }
+
+        RpcContext context = RpcContext.getContext();
+        String timeout = configuration.getProperty(ConfigConstants.TIMEOUT_KEY, "5000");
+        context.getAttachments().put("timeout", timeout);
         return invoker.invoke(invocation);
     }
 

@@ -4,23 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="update zookeeper client configuration">
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/LoadBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/exception/NoProviderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/loadbalance/RandomLoadBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add ClusterProtocol test">
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ConfigConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/ConfigurationCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/ZookeeperPathParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/ZookeeperPathParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/api/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/api/Registry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/HeaderExchangeChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/HeaderExchangeChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +72,7 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ClusterTest.export_test.executor": "Run",
     "JUnit.ClusterTest.refer_test.executor": "Run",
+    "JUnit.ClusterTest.timeout_test.executor": "Run",
     "JUnit.HeaderExchangeTest.exchangeServer_test.executor": "Run",
     "JUnit.HeaderExchangeTest.request_test.executor": "Run",
     "JUnit.HeaderExchangeTest.server.executor": "Run",
@@ -118,7 +122,7 @@
       <recent name="com.maxchen.trubbo.remoting" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClusterTest.refer_test">
+  <component name="RunManager" selected="JUnit.ClusterTest.timeout_test">
     <configuration name="ClusterTest.export_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-cluster" />
       <extension name="coverage">
@@ -151,17 +155,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryProtocolTest.register_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trubbo-registry" />
+    <configuration name="ClusterTest.timeout_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trubbo-cluster" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="registryTest.*" />
+          <option name="PATTERN" value="clusterTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="registryTest" />
-      <option name="MAIN_CLASS_NAME" value="registryTest.RegistryProtocolTest" />
-      <option name="METHOD_NAME" value="register_test" />
+      <option name="PACKAGE_NAME" value="clusterTest" />
+      <option name="MAIN_CLASS_NAME" value="clusterTest.ClusterTest" />
+      <option name="METHOD_NAME" value="timeout_test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClusterTest.refer_test" />
+        <item itemvalue="JUnit.ClusterTest.timeout_test" />
         <item itemvalue="JUnit.ClusterTest.export_test" />
+        <item itemvalue="JUnit.ClusterTest.refer_test" />
         <item itemvalue="JUnit.ZookeeperTest.client_test" />
         <item itemvalue="JUnit.RegistryProtocolTest.subscribe_test" />
-        <item itemvalue="JUnit.RegistryProtocolTest.register_test" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +247,8 @@
       <workItem from="1731939929972" duration="5938000" />
       <workItem from="1732104429222" duration="13163000" />
       <workItem from="1732118358827" duration="100000" />
-      <workItem from="1732282332484" duration="8482000" />
+      <workItem from="1732282332484" duration="8749000" />
+      <workItem from="1732629374467" duration="6969000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -597,7 +602,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732282965081</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add basic ClusterProtocol">
+      <option name="closed" value="true" />
+      <created>1732290904987</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1732290904987</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add ClusterProtocol test">
+      <option name="closed" value="true" />
+      <created>1732290928600</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1732290928600</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,8 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TrubboProtocol updated" />
-    <MESSAGE value="add HeartBeatHandler" />
     <MESSAGE value="change structure" />
     <MESSAGE value="add trubbo-rpc module" />
     <MESSAGE value="add ConsumerInvoker" />
@@ -640,7 +659,9 @@
     <MESSAGE value="add TrubboRegistry" />
     <MESSAGE value="add TrubboRegistry test" />
     <MESSAGE value="update zookeeper client configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="update zookeeper client configuration" />
+    <MESSAGE value="add basic ClusterProtocol" />
+    <MESSAGE value="add ClusterProtocol test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ClusterProtocol test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

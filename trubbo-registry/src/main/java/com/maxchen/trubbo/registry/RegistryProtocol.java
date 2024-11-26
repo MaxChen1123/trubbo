@@ -22,5 +22,6 @@ public class RegistryProtocol {
 
     public void subscribe(String serviceName) {
         registry.subscribe(serviceName, new ZookeeperListener("", new RegistryCallback()));
+        registry.watchConfiguration(serviceName, new ZookeeperListener("", new ConfigurationCallback()));
     }
 }

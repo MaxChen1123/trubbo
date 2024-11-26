@@ -37,6 +37,7 @@ public class ZookeeperClient {
     public void createPath(String path) {
         try {
             client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(path);
+        } catch (KeeperException.NodeExistsException ignored) {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

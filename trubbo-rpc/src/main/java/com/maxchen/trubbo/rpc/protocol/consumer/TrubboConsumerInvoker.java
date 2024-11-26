@@ -39,6 +39,7 @@ public class TrubboConsumerInvoker implements Invoker {
         context.setRequestId(request.getRequestId());
         //TODO request attachment config
         ExchangeClient client = chooseClient(clients);
+        request.setAttachment("timeout", context.getAttachments().get("timeout"));
         if (context.isOneWay()) {
             client.send(request);
             return null;
