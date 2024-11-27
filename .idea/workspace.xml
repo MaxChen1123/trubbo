@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="add Configuration and support configuring timeout">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Added throwable handling feature in rpc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/codec/TrubboDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/codec/TrubboDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/codec/TrubboEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/codec/TrubboEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/codec/serialization/KryoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/codec/serialization/KryoUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/RpcFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/RpcFuture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/test/java/RpcFutureTest/RpcFutureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/test/java/RpcFutureTest/RpcFutureTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/TrubboProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/ConsumerInvocationResult.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +234,7 @@
       <workItem from="1732118358827" duration="100000" />
       <workItem from="1732282332484" duration="8749000" />
       <workItem from="1732629374467" duration="10102000" />
-      <workItem from="1732714658307" duration="1903000" />
+      <workItem from="1732714658307" duration="4238000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Server">
       <option name="closed" value="true" />
@@ -624,7 +612,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732636484968</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Added throwable handling feature in rpc">
+      <option name="closed" value="true" />
+      <created>1732716938503</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1732716938503</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +638,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add trubbo-rpc module" />
     <MESSAGE value="add ConsumerInvoker" />
     <MESSAGE value="add ProtocolConsumerTest" />
     <MESSAGE value="add Exporter" />
@@ -667,7 +662,8 @@
     <MESSAGE value="add basic ClusterProtocol" />
     <MESSAGE value="add ClusterProtocol test" />
     <MESSAGE value="add Configuration and support configuring timeout" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Configuration and support configuring timeout" />
+    <MESSAGE value="Added throwable handling feature in rpc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added throwable handling feature in rpc" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -17,7 +17,6 @@ public class ConsumerInvocationResult implements InvocationResult {
     public Response get() {
         try {
             return future.get();
-            //TODO 错误处理
         } catch (InterruptedException | ExecutionException e) {
             throw e.getCause();
         }

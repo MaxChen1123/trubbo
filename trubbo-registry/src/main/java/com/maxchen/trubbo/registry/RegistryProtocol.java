@@ -15,7 +15,6 @@ public class RegistryProtocol {
         this.url = url;
     }
 
-    // TODO TrubboProtocol operation should be in Cluster layer
     public void register(URL url) {
         registry.register(url);
     }
