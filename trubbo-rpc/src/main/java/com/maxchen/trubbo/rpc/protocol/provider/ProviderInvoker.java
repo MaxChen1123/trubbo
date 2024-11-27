@@ -7,6 +7,7 @@ import com.maxchen.trubbo.rpc.protocol.api.InvocationResult;
 import com.maxchen.trubbo.rpc.protocol.api.Invoker;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.concurrent.CompletableFuture;
 
@@ -32,7 +33,20 @@ public class ProviderInvoker implements Invoker {
             String serviceName = providerInvocation.getServiceName();
             try {
                 Method method = serviceClass.getMethod(providerInvocation.getMethodName(), providerInvocation.getArgsTypes());
-                Object invoke = method.invoke(service, providerInvocation.getArgs());
+                Object invoke = null;
+
+                try {
+                    invoke = method.invoke(service, providerInvocation.getArgs());
+                } catch (InvocationTargetException e) {
+                    Response build = Response.builder()
+                            .exception(e.getTargetException())
+                            .isException(true)
+                            .requestId(RpcContext.getContext().getRequestId())
+                            .build();
+                    log.info("provider response: {}", build);
+                    return new ProviderInvocationResult(build);
+                }
+
                 if (invoke instanceof CompletableFuture<?> c) {
                     invoke = c.get();
                 }

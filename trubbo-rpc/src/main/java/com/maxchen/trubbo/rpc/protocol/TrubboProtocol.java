@@ -18,12 +18,14 @@ import com.maxchen.trubbo.rpc.protocol.consumer.TrubboConsumerInvoker;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderExporter;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderInvocation;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+@Slf4j
 public class TrubboProtocol {
     private static final Map<String, List<ExchangeClient>> CLIENT_MAP = new ConcurrentHashMap<>();
     @Getter

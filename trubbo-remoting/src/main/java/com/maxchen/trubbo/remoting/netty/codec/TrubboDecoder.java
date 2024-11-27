@@ -11,9 +11,11 @@ import com.maxchen.trubbo.remoting.netty.exchange.Response;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 public class TrubboDecoder extends ByteToMessageDecoder {
     private final Serialization serializer = new KyroSerializer();
 
@@ -43,7 +45,13 @@ public class TrubboDecoder extends ByteToMessageDecoder {
         } else {
             clazz = Response.class;
         }
-        Object object = serializer.deserialize(bytes, clazz);
+        Object object = null;
+        try {
+            object = serializer.deserialize(bytes, clazz);
+        } catch (Exception e) {
+            log.error("TrubboDecoder.decode error", e);
+            return;
+        }
         TrubboMessage trubboMessage = new TrubboMessage(new TrubboHeader(info, messageId, size), object);
         list.add(trubboMessage);
     }

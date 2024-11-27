@@ -3,6 +3,7 @@ package com.maxchen.trubbo.remoting.netty.codec.serialization;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.serializers.JavaSerializer;
 import org.objenesis.strategy.StdInstantiatorStrategy;
 
 import java.io.ByteArrayInputStream;
@@ -17,7 +18,7 @@ public class KryoUtil {
         @Override
         protected Kryo initialValue() {
             Kryo kryo = new Kryo();
-
+            kryo.addDefaultSerializer(java.lang.Throwable.class, new JavaSerializer());
             /**
              * 不要轻易改变这里的配置！更改之后，序列化的格式就会发生变化，
              * 上线的同时就必须清除 Redis 里的所有缓存，

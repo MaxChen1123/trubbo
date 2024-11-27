@@ -12,5 +12,7 @@ public interface TestService {
     CompletableFuture<User> testUserAsync(int id);
 
     void testTimeout(long timeout);
+
+    int testException(int i);
 }
 

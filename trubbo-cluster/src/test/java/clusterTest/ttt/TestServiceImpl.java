@@ -39,4 +39,9 @@ public class TestServiceImpl implements TestService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public int testException(int i) {
+        throw new RuntimeException("test exception");
+    }
 }

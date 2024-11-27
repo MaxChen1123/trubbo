@@ -25,7 +25,8 @@ public class ZookeeperClient {
     public ZookeeperClient(URL url) {
         try {
             this.url = url;
-            this.client = CuratorFrameworkFactory.newClient(url.getRemoteAddress(), 12000, 6000, new RetryNTimes(1, 1000));
+            this.client = CuratorFrameworkFactory.newClient(url.getRemoteAddress(),
+                    12000, 6000, new RetryNTimes(1, 1000));
             this.client.start();
             this.client.blockUntilConnected();
             log.info("zookeeper connect success");

@@ -55,6 +55,9 @@ public class RpcFuture extends CompletableFuture<Response> {
             if (_timeout != null) {
                 _timeout.cancel();
             }
+            if (response.isException()) {
+                this.completeExceptionally(response.getException());
+            }
             this.complete(response);
         } else if (response.isException()) {
             this.completeExceptionally(response.getException());

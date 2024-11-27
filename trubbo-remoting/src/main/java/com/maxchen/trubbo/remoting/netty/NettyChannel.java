@@ -8,11 +8,13 @@ import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboMessage;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
+@Slf4j
 @Getter
 @NoArgsConstructor
 public class NettyChannel implements Channel {
@@ -55,6 +57,7 @@ public class NettyChannel implements Channel {
             trubboHeader.setInfo(info);
         }
         TrubboMessage trubboMessage = new TrubboMessage(trubboHeader, message);
+        log.debug("NettyChannel.send send {}", trubboMessage);
         channel.writeAndFlush(trubboMessage);
     }
 

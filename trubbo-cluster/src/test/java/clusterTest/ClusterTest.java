@@ -50,4 +50,12 @@ public class ClusterTest {
             System.out.println("8000ms catch RpcTimeoutException ");
         }
     }
+
+    @Test
+    public void exception_test() throws URISyntaxException {
+        ClusterProtocol clusterProtocol = new ClusterProtocol(new URL("zookeeper://127.0.0.1:2181"));
+        Invoker refer = clusterProtocol.refer("clusterTest.ttt.TestService");
+        TestService proxy = JdkProxyFactory.getProxy(TestService.class, refer);
+        proxy.testException(1);
+    }
 }
