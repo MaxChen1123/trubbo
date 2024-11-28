@@ -1,12 +1,13 @@
 package com.maxchen.trubbo.cluster;
 
-import com.maxchen.trubbo.cluster.api.Configuration;
 import com.maxchen.trubbo.common.URL.URL;
+import com.maxchen.trubbo.common.configuration.Configuration;
 import com.maxchen.trubbo.registry.TrubboRegistry;
 import lombok.Getter;
 
 import java.net.URISyntaxException;
 
+// TODO to be replaced
 public class ServiceConfiguration implements Configuration {
     @Getter
     private final String serviceName;

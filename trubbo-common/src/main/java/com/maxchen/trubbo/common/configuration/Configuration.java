@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.cluster.api;
+package com.maxchen.trubbo.common.configuration;
 
 public interface Configuration {
 

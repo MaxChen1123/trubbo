@@ -12,5 +12,7 @@ public interface Registry {
 
     void unsubscribe(URL url);
 
-    void watchConfiguration(String serviceName, ZookeeperListener listener);
+    void watchServiceConfiguration(String serviceName, ZookeeperListener listener);
+
+    void watchMethodConfiguration(String serviceName, ZookeeperListener listener);
 }

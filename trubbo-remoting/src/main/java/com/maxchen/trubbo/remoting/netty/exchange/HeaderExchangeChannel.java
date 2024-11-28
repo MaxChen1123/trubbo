@@ -3,6 +3,7 @@ package com.maxchen.trubbo.remoting.netty.exchange;
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.remoting.netty.api.Client;
+import com.maxchen.trubbo.remoting.netty.exception.NettySendException;
 import com.maxchen.trubbo.remoting.netty.exchange.api.ExchangeChannel;
 
 import java.util.concurrent.Future;
@@ -30,7 +31,11 @@ public class HeaderExchangeChannel implements ExchangeChannel {
         } else {
             future = RpcFuture.newFuture(this, request);
         }
-        client.send(request);
+        try {
+            client.send(request);
+        } catch (Exception e) {
+            throw new NettySendException("");
+        }
         return future;
     }
 

@@ -2,6 +2,7 @@ package com.maxchen.trubbo.registry;
 
 import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.common.URL.UrlConstant;
+import com.maxchen.trubbo.common.configuration.ConfigurationContext;
 import com.maxchen.trubbo.registry.api.Registry;
 import com.maxchen.trubbo.remoting.zookeeper.ZookeeperClient;
 import com.maxchen.trubbo.remoting.zookeeper.ZookeeperListener;
@@ -33,7 +34,7 @@ public class TrubboRegistry implements Registry {
 
                 String config = zookeeperClient.getData(RegistryConstants.SERVICE_PATH + "/" + serviceName
                         + RegistryConstants.CONFIGURATION_KEY);
-                if (config != null) CONFIGURATION_MAP.put(serviceName, config);
+                if (config != null) ConfigurationContext.REGISTRY_CONFIGURATION_MAP.put(serviceName, config);
             });
         }
 
@@ -63,8 +64,14 @@ public class TrubboRegistry implements Registry {
     }
 
     @Override
-    public void watchConfiguration(String serviceName, ZookeeperListener listener) {
+    public void watchServiceConfiguration(String serviceName, ZookeeperListener listener) {
         zookeeperClient.watchPath(RegistryConstants.SERVICE_PATH + "/" +
                 serviceName + RegistryConstants.CONFIGURATION_KEY, listener);
+    }
+
+    @Override
+    public void watchMethodConfiguration(String serviceName, ZookeeperListener listener) {
+        zookeeperClient.watchPath(RegistryConstants.SERVICE_PATH + "/" +
+                serviceName + RegistryConstants.METHOD_KEY, listener);
     }
 }
