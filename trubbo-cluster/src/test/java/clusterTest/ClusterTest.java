@@ -58,4 +58,19 @@ public class ClusterTest {
         TestService proxy = JdkProxyFactory.getProxy(TestService.class, refer);
         proxy.testException(1);
     }
+
+    @Test
+    public void oneway_test() throws URISyntaxException, InterruptedException {
+        ClusterProtocol clusterProtocol = new ClusterProtocol(new URL("zookeeper://127.0.0.1:2181"));
+        Invoker refer = clusterProtocol.refer("clusterTest.ttt.TestService");
+        TestService proxy = JdkProxyFactory.getProxy(TestService.class, refer);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        proxy.testOneWay();
+        System.out.println("oneway test end");
+        Thread.sleep(2000);
+    }
 }

@@ -14,5 +14,7 @@ public interface TestService {
     void testTimeout(long timeout);
 
     int testException(int i);
+
+    void testOneWay();
 }
 
