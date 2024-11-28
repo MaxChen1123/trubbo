@@ -134,6 +134,9 @@ public class TrubboProtocol {
                 Exporter exporter = EXPORTER_MAP.get(request.getServiceName());
                 ProviderInvocation providerInvocation = new ProviderInvocation(request);
                 InvocationResult result = exporter.invoke(providerInvocation);
+                if (RpcContext.getContext().isOneWay()) {
+                    return;
+                }
                 response(result.get(), channel);
             }
         }

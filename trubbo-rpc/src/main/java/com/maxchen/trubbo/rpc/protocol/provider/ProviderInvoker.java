@@ -38,6 +38,9 @@ public class ProviderInvoker implements Invoker {
                 try {
                     invoke = method.invoke(service, providerInvocation.getArgs());
                 } catch (InvocationTargetException e) {
+                    if (RpcContext.getContext().isOneWay()) {
+                        return null;
+                    }
                     Response build = Response.builder()
                             .exception(e.getTargetException())
                             .isException(true)

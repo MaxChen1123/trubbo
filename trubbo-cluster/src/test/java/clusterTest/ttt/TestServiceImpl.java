@@ -1,5 +1,7 @@
 package clusterTest.ttt;
 
+import lombok.SneakyThrows;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,5 +45,13 @@ public class TestServiceImpl implements TestService {
     @Override
     public int testException(int i) {
         throw new RuntimeException("test exception");
+    }
+
+    @Override
+    @SneakyThrows
+    public void testOneWay() {
+        System.out.println("one way method start at: " + System.currentTimeMillis());
+        Thread.sleep(5000);
+        System.out.println("one way method end at: " + System.currentTimeMillis());
     }
 }
