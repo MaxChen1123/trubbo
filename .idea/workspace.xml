@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="minor change">
-      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigurationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/MethodConfigurationCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exception/NettySendException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/ZookeeperPathParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/util/ZookeeperPathParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/ConfigurationCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/ServiceConfigurationCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/RegistryProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/api/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/api/Registry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/HeaderExchangeChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/exchange/HeaderExchangeChannel.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Changed the Configuration's implements and supported global ConfigurationContext">
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/proxy/ConsumerInvocationHandler.java" afterDir="false" />
     </list>
@@ -250,15 +235,7 @@
       <workItem from="1732629374467" duration="10102000" />
       <workItem from="1732714658307" duration="5593000" />
       <workItem from="1732720867367" duration="2113000" />
-      <workItem from="1732797140067" duration="6063000" />
-    </task>
-    <task id="LOCAL-00001" summary="add Client and Server">
-      <option name="closed" value="true" />
-      <created>1730642436079</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1730642436079</updated>
+      <workItem from="1732797140067" duration="6391000" />
     </task>
     <task id="LOCAL-00002" summary="implement basic Netty client and server">
       <option name="closed" value="true" />
@@ -644,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732718933769</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Changed the Configuration's implements and supported global ConfigurationContext">
+      <option name="closed" value="true" />
+      <created>1732805965191</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1732805965191</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add ProtocolConsumerTest" />
     <MESSAGE value="add Exporter" />
     <MESSAGE value="add Exporter test" />
     <MESSAGE value="idea workspace.xml changed" />
@@ -687,7 +671,8 @@
     <MESSAGE value="add Configuration and support configuring timeout" />
     <MESSAGE value="Added throwable handling feature in rpc" />
     <MESSAGE value="minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor change" />
+    <MESSAGE value="Changed the Configuration's implements and supported global ConfigurationContext" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the Configuration's implements and supported global ConfigurationContext" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

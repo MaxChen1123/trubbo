@@ -47,6 +47,11 @@ public class ProviderInvoker implements Invoker {
                     return new ProviderInvocationResult(build);
                 }
 
+                if (RpcContext.getContext().isOneWay()) {
+                    log.info("oneway request, do not need response");
+                    return null;
+                }
+
                 if (invoke instanceof CompletableFuture<?> c) {
                     invoke = c.get();
                 }

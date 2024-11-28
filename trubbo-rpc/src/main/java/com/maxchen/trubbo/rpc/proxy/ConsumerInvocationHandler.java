@@ -1,5 +1,7 @@
 package com.maxchen.trubbo.rpc.proxy;
 
+import com.maxchen.trubbo.common.configuration.ConfigConstants;
+import com.maxchen.trubbo.common.configuration.ConfigurationContext;
 import com.maxchen.trubbo.remoting.netty.exchange.Response;
 import com.maxchen.trubbo.rpc.protocol.api.InvocationResult;
 import com.maxchen.trubbo.rpc.protocol.api.Invoker;
@@ -11,8 +13,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 
 public class ConsumerInvocationHandler implements InvocationHandler {
-    private Invoker invoker;
-    private String serviceName;
+    private final Invoker invoker;
+    private final String serviceName;
 
     public ConsumerInvocationHandler(Invoker invoker) {
         this.invoker = invoker;
@@ -38,15 +40,21 @@ public class ConsumerInvocationHandler implements InvocationHandler {
 
         //if the return type is Future, we consider this invocation as an async one
         boolean isAsync = Future.class.isAssignableFrom(method.getReturnType());
-        // TODO oneway judge
+        String isOneway = ConfigurationContext
+                .getMethodConfigProperty(serviceName, methodName, ConfigConstants.ONE_WAY_KEY, "false");
+
         ConsumerInvocation inv = ConsumerInvocation.builder()
                 .args(args)
                 .argsTypes(parameterTypes)
                 .serviceName(serviceName)
                 .methodName(methodName)
                 .isAsync(isAsync)
+                .isOneWay(Boolean.parseBoolean(isOneway))
                 .build();
         InvocationResult result = invoker.invoke(inv);
+        if (result == null) {
+            return null;
+        }
         if (isAsync) {
             Future<Response> future = result.getFuture();
             return ((CompletableFuture<Response>) future).thenApply(Response::getResult);
