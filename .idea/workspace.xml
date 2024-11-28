@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add support for one-way request">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Update test for one-way request">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ttt/TestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/MethodConfigurationCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/MethodConfigurationCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/zookeeper/ZookeeperListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/provider/ProviderInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,23 +238,7 @@
       <workItem from="1732629374467" duration="10102000" />
       <workItem from="1732714658307" duration="5593000" />
       <workItem from="1732720867367" duration="2113000" />
-      <workItem from="1732797140067" duration="9694000" />
-    </task>
-    <task id="LOCAL-00003" summary="update test unit">
-      <option name="closed" value="true" />
-      <created>1730728481922</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1730728481922</updated>
-    </task>
-    <task id="LOCAL-00004" summary="change package structure">
-      <option name="closed" value="true" />
-      <created>1730728825071</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1730728825071</updated>
+      <workItem from="1732797140067" duration="10940000" />
     </task>
     <task id="LOCAL-00005" summary="add KryoSerializer">
       <option name="closed" value="true" />
@@ -635,7 +616,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732806066332</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Fix some bug of one-way request">
+      <option name="closed" value="true" />
+      <created>1732809610604</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1732809610605</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Update test for one-way request">
+      <option name="closed" value="true" />
+      <created>1732809639714</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1732809639714</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,8 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Exporter test" />
-    <MESSAGE value="idea workspace.xml changed" />
     <MESSAGE value="add thread pool" />
     <MESSAGE value="fix bug that threadLocal shared in different thread" />
     <MESSAGE value="add DispatcherHandler to support threadPool" />
@@ -678,7 +673,9 @@
     <MESSAGE value="minor change" />
     <MESSAGE value="Changed the Configuration's implements and supported global ConfigurationContext" />
     <MESSAGE value="Add support for one-way request" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add support for one-way request" />
+    <MESSAGE value="Fix some bug of one-way request" />
+    <MESSAGE value="Update test for one-way request" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update test for one-way request" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
