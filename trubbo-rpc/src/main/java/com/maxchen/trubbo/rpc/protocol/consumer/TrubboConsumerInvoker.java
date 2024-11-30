@@ -30,14 +30,9 @@ public class TrubboConsumerInvoker implements Invoker {
     @Override
     public InvocationResult invoke(Invocation invocation) {
         RpcContext context = RpcContext.getContext();
-//        context.setUrl(invocation.getUrl());
-        context.setOneWay(invocation.isOneWay());
-        context.setAsync(invocation.isAsync());
-
         Request request = invocation.toRequest();
         context.setRequest(true);
         context.setRequestId(request.getRequestId());
-        //TODO request attachment config
         ExchangeClient client = chooseClient(clients);
         request.setAttachment("timeout", context.getAttachments().get("timeout"));
         if (context.isOneWay()) {

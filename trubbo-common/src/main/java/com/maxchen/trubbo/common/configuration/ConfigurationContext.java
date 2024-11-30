@@ -1,5 +1,6 @@
 package com.maxchen.trubbo.common.configuration;
 
+import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
 
 import java.net.URISyntaxException;
@@ -34,5 +35,13 @@ public class ConfigurationContext {
         } catch (URISyntaxException e) {
             return defaultValue;
         }
+    }
+
+    public static String getProperty(String key, String defaultValue) {
+        RpcContext context = RpcContext.getContext();
+        String methodConfigProperty = getMethodConfigProperty(context.getServiceName(), context.getMethodName(), key, null);
+        if (methodConfigProperty != null) {
+            return methodConfigProperty;
+        } else return getServiceConfigProperty(context.getServiceName(), key, defaultValue);
     }
 }

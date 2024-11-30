@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Update test for one-way request">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Fix bug that might could not load Zookeeper's configuration properly at startup">
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.LoadBalance" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/spi/ExtensionLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ServiceConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/test/java/clusterTest/ClusterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/RpcContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigurationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigurationContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-registry/src/main/java/com/maxchen/trubbo/registry/TrubboRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-rpc/src/main/java/com/maxchen/trubbo/rpc/protocol/consumer/TrubboConsumerInvoker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,64 +56,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ClusterTest.exception_test.executor": "Run",
-    "JUnit.ClusterTest.export_test.executor": "Run",
-    "JUnit.ClusterTest.oneway_test.executor": "Run",
-    "JUnit.ClusterTest.refer_test.executor": "Run",
-    "JUnit.ClusterTest.timeout_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.exchangeServer_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.request_test.executor": "Run",
-    "JUnit.HeaderExchangeTest.server.executor": "Run",
-    "JUnit.NettyTest.client_test.executor": "Run",
-    "JUnit.NettyTest.server_test.executor": "Run",
-    "JUnit.PathParserTest.test.executor": "Run",
-    "JUnit.PathParserTest.test2.executor": "Run",
-    "JUnit.ProtocolConsumerTest.Proxy_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.consumerInvoker_test.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_exporter.executor": "Run",
-    "JUnit.ProtocolConsumerTest.rpcTest_server.executor": "Run",
-    "JUnit.RegistryProtocolTest.register_test.executor": "Run",
-    "JUnit.RegistryProtocolTest.subscribe_test.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_client.executor": "Run",
-    "JUnit.RpcFutureTest.rpcTest_server.executor": "Run",
-    "JUnit.UrlTest.url_path_test.executor": "Run",
-    "JUnit.ZookeeperTest.client_test.executor": "Run",
-    "JUnit.ZookeeperTest.listener_test.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.37126437",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "settings.editor.splitter.proportion": "0.2517839",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ClusterTest.exception_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClusterTest.export_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClusterTest.oneway_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClusterTest.refer_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClusterTest.timeout_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.exchangeServer_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.request_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderExchangeTest.server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.client_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NettyTest.server_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PathParserTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PathParserTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.Proxy_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.consumerInvoker_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_exporter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProtocolConsumerTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegistryProtocolTest.register_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegistryProtocolTest.subscribe_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_client.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RpcFutureTest.rpcTest_server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UrlTest.url_path_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ZookeeperTest.client_test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ZookeeperTest.listener_test.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37126437&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2517839&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.maxchen.trubbo.remoting" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\!java\trubbo\trubbo\trubbo-cluster\src\main\resources\META-INF" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.maxchen.trubbo.rpc.protocol" />
       <recent name="com.maxchen.trubbo.remoting" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClusterTest.oneway_test">
+  <component name="RunManager" selected="JUnit.ClusterTest.refer_test">
     <configuration name="ClusterTest.exception_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trubbo-cluster" />
       <extension name="coverage">
@@ -192,10 +199,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClusterTest.oneway_test" />
-        <item itemvalue="JUnit.ClusterTest.export_test" />
-        <item itemvalue="JUnit.ClusterTest.timeout_test" />
         <item itemvalue="JUnit.ClusterTest.refer_test" />
+        <item itemvalue="JUnit.ClusterTest.export_test" />
+        <item itemvalue="JUnit.ClusterTest.oneway_test" />
+        <item itemvalue="JUnit.ClusterTest.timeout_test" />
         <item itemvalue="JUnit.ClusterTest.exception_test" />
       </list>
     </recent_temporary>
@@ -238,15 +245,8 @@
       <workItem from="1732629374467" duration="10102000" />
       <workItem from="1732714658307" duration="5593000" />
       <workItem from="1732720867367" duration="2113000" />
-      <workItem from="1732797140067" duration="10940000" />
-    </task>
-    <task id="LOCAL-00005" summary="add KryoSerializer">
-      <option name="closed" value="true" />
-      <created>1730811998211</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1730811998211</updated>
+      <workItem from="1732797140067" duration="10993000" />
+      <workItem from="1732973961219" duration="9723000" />
     </task>
     <task id="LOCAL-00006" summary="KryoSerializer Test">
       <option name="closed" value="true" />
@@ -632,7 +632,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732809639714</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fix bug that might could not load Zookeeper's configuration properly at startup">
+      <option name="closed" value="true" />
+      <created>1732810634603</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1732810634603</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +658,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add thread pool" />
     <MESSAGE value="fix bug that threadLocal shared in different thread" />
     <MESSAGE value="add DispatcherHandler to support threadPool" />
     <MESSAGE value="add url test" />
@@ -675,7 +682,8 @@
     <MESSAGE value="Add support for one-way request" />
     <MESSAGE value="Fix some bug of one-way request" />
     <MESSAGE value="Update test for one-way request" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update test for one-way request" />
+    <MESSAGE value="Fix bug that might could not load Zookeeper's configuration properly at startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug that might could not load Zookeeper's configuration properly at startup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

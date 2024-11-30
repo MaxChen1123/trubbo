@@ -18,9 +18,10 @@ public class RpcContext {
     private volatile boolean isAsync;
     private Map<String, String> attachments = new ConcurrentHashMap<>();
 
-    //    private String serviceName;
-//    private String methodName;
-//    private Class<?>[] argsTypes;
+    private String serviceName;
+    private String methodName;
+
+    //    private Class<?>[] argsTypes;
 //    private Object[] args;
     public void setUrlFromString(String url) throws URISyntaxException {
         this.url = new URL(url);

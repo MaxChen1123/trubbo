@@ -38,7 +38,7 @@ public class TrubboRegistry implements Registry {
 
                 List<String> methodConfig = zookeeperClient.getChildren(RegistryConstants.SERVICE_PATH + "/" + serviceName
                         + RegistryConstants.METHOD_KEY);
-                methodConfig.forEach(methodName -> {
+                if (methodConfig != null) methodConfig.forEach(methodName -> {
                     String data = zookeeperClient.getData(RegistryConstants.SERVICE_PATH + "/" +
                             serviceName + RegistryConstants.METHOD_KEY + "/" + methodName);
                     ConfigurationContext.REGISTRY_CONFIGURATION_MAP.put(serviceName + ":" + methodName, data);

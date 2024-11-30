@@ -2,12 +2,12 @@ package com.maxchen.trubbo.cluster;
 
 import com.maxchen.trubbo.cluster.api.LoadBalance;
 import com.maxchen.trubbo.cluster.exception.NoProviderException;
-import com.maxchen.trubbo.cluster.loadbalance.RandomLoadBalance;
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.common.URL.UrlConstant;
 import com.maxchen.trubbo.common.configuration.ConfigConstants;
 import com.maxchen.trubbo.common.configuration.ConfigurationContext;
+import com.maxchen.trubbo.common.spi.ExtensionLoader;
 import com.maxchen.trubbo.registry.TrubboRegistry;
 import com.maxchen.trubbo.rpc.protocol.TrubboProtocol;
 import com.maxchen.trubbo.rpc.protocol.api.Invocation;
@@ -22,8 +22,8 @@ public class ClusterInvoker implements Invoker {
     @Getter
     private String serviceName;
     private final ClusterProtocol ClusterProtocol;
-    // TODO config
-    private static final LoadBalance loadBalance = new RandomLoadBalance();
+
+    private static final String DEFAULT_LOAD_BALANCE = "com.maxchen.trubbo.cluster.loadbalance.RandomLoadBalance";
 
     public ClusterInvoker(String serviceName, ClusterProtocol ClusterProtocol) {
         this.serviceName = serviceName;
@@ -37,18 +37,27 @@ public class ClusterInvoker implements Invoker {
         if (providersAddr == null || providersAddr.isEmpty()) {
             throw new NoProviderException("No provider available for service " + serviceName);
         }
-        // TODO config
+
+        RpcContext context = RpcContext.getContext();
+        context.setOneWay(invocation.isOneWay());
+        context.setAsync(invocation.isAsync());
+        context.setServiceName(serviceName);
+        context.setMethodName(invocation.getMethodName());
+
+        String timeout = ConfigurationContext.getServiceConfigProperty(serviceName, ConfigConstants.TIMEOUT_KEY, "5000");
+        context.getAttachments().put("timeout", timeout);
+
+        String loadBalanceName = ConfigurationContext.getProperty(ConfigConstants.LOADBALANCE_KEY, DEFAULT_LOAD_BALANCE);
+        LoadBalance loadBalance = ExtensionLoader.getExtension(LoadBalance.class, loadBalanceName);
+        assert loadBalance != null;
         String address = loadBalance.select(providersAddr.stream().toList());
+
         String invokerKey = getInvokerKey(serviceName, address);
         Invoker invoker = TrubboProtocol.getINVOKER_MAP().get(invokerKey);
         if (invoker == null) {
             URL serviceUrl = getServiceUrl(serviceName, address);
             invoker = TrubboProtocol.refer(serviceUrl);
         }
-
-        RpcContext context = RpcContext.getContext();
-        String timeout = ConfigurationContext.getServiceConfigProperty(serviceName, ConfigConstants.TIMEOUT_KEY, "5000");
-        context.getAttachments().put("timeout", timeout);
         return invoker.invoke(invocation);
     }
 
