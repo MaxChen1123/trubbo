@@ -7,7 +7,6 @@ import lombok.Getter;
 
 import java.net.URISyntaxException;
 
-// TODO to be replaced
 @Deprecated
 public class ServiceConfiguration implements Configuration {
     @Getter
