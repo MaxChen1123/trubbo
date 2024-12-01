@@ -14,6 +14,7 @@
         <module>trubbo-rpc</module>
         <module>trubbo-registry</module>
         <module>trubbo-cluster</module>
+        <module>trubbo-spring</module>
     </modules>
 
     <properties>

@@ -13,5 +13,10 @@
     <file url="file://$PROJECT_DIR$/trubbo-remoting/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-rpc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trubbo-rpc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-spring/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-spring/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trubbo-test/trubbo-provider-spring-test/src/main/java" charset="UTF-8" />
   </component>
 </project>

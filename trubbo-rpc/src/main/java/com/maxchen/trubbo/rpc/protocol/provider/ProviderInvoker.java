@@ -27,6 +27,17 @@ public class ProviderInvoker implements Invoker {
         }
     }
 
+    public ProviderInvoker(String serviceName, String implName) {
+        this.serviceName = serviceName;
+        try {
+            this.serviceClass = Class.forName(implName);
+            service = serviceClass.getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     @Override
     public InvocationResult invoke(Invocation invocation) {
         if (invocation instanceof ProviderInvocation providerInvocation) {
