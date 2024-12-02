@@ -5,7 +5,7 @@ import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.common.configuration.ConfigurationContext;
 import com.maxchen.trubbo.spring.provider.annotation.TrubboService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.config.YamlMapFactoryBean;
+import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,19 +15,18 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
 
 import java.net.URISyntaxException;
-import java.util.Map;
+import java.util.Properties;
 
 @Slf4j
-public class TrubboProviderInitializer implements ApplicationListener<ContextRefreshedEvent>, ApplicationContextInitializer<ConfigurableApplicationContext> {
-    private ClusterProtocol clusterProtocol;
+public class TrubboInitializer implements ApplicationListener<ContextRefreshedEvent>
+        , ApplicationContextInitializer<ConfigurableApplicationContext> {
+    private static ClusterProtocol clusterProtocol;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        // 创建一个扫描器，用于扫描指定包下的组件
         ClassPathScanningCandidateComponentProvider scanner =
                 new ClassPathScanningCandidateComponentProvider(false);
 
-        // 添加过滤器，扫描带有 @TrubboService 注解的类
         scanner.addIncludeFilter(new AnnotationTypeFilter(TrubboService.class));
 
         //TODO
@@ -64,15 +63,19 @@ public class TrubboProviderInitializer implements ApplicationListener<ContextRef
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
         printTrubbo();
-        YamlMapFactoryBean yamlMapFactoryBean = new YamlMapFactoryBean();
-        yamlMapFactoryBean.setResources(new ClassPathResource("application.yml"));
-        Map<String, Object> map = yamlMapFactoryBean.getObject();
-        if (map != null) {
-            ConfigurationContext.SPRING_CONFIGURATION_MAP.putAll(map);
+        YamlPropertiesFactoryBean factoryBean = new YamlPropertiesFactoryBean();
+        factoryBean.setResources(new ClassPathResource("application.yml"));
+        Properties properties = factoryBean.getObject();
+        if (properties != null) {
+            ConfigurationContext.SPRING_CONFIGURATION_MAP.putAll(properties);
         }
         try {
+            if (!ConfigurationContext.SPRING_CONFIGURATION_MAP.containsKey("trubbo.zookeeper.address")) {
+                throw new RuntimeException("trubbo.zookeeper.address is not set");
+            }
+            String zookeeperAddress = (String) ConfigurationContext.SPRING_CONFIGURATION_MAP.get("trubbo.zookeeper.address");
             clusterProtocol = new ClusterProtocol(new URL("Zookeeper://"
-                    + ConfigurationContext.SPRING_CONFIGURATION_MAP.get("trubbo.zookeeper.address")));
+                    + zookeeperAddress));
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
@@ -86,7 +89,7 @@ public class TrubboProviderInitializer implements ApplicationListener<ContextRef
                 "    |  |     |      /     |  |  |  | |   _  <  |   _  <  |  |  |  | \n" +
                 "    |  |     |  |\\  \\----.|  `--'  | |  |_)  | |  |_)  | |  `--'  | \n" +
                 "    |__|     | _| `._____| \\______/  |______/  |______/   \\______/  \n" +
-                "                                                                    ");
+                "                                                                    \n");
     }
 
 }

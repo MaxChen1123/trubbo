@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConfigurationContext {
     public static final Map<String, String> SYSTEM_CONFIGURATION_MAP = System.getenv();
     public static final Map<String, String> REGISTRY_CONFIGURATION_MAP = new ConcurrentHashMap<>();
-    public static final Map<String, Object> SPRING_CONFIGURATION_MAP = new ConcurrentHashMap<>();
+    public static final Map<Object, Object> SPRING_CONFIGURATION_MAP = new ConcurrentHashMap<Object, Object>();
 
     public static String getServiceConfigProperty(String serviceName, String key, String defaultValue) {
         String config = REGISTRY_CONFIGURATION_MAP.getOrDefault(serviceName, null);
