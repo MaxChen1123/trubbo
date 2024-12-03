@@ -10,12 +10,12 @@ import com.maxchen.trubbo.spring.annotation.TrubboService;
 import lombok.extern.slf4j.Slf4j;
 import org.reflections.Reflections;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.io.ClassPathResource;
@@ -28,7 +28,7 @@ import java.util.Set;
 
 @Slf4j
 public class TrubboInitializer implements ApplicationListener<ContextRefreshedEvent>
-        , ApplicationContextInitializer<ConfigurableApplicationContext>
+        , BeanFactoryPostProcessor
         , BeanPostProcessor {
     private static ClusterProtocol clusterProtocol;
     private static volatile String basePackage;
@@ -91,8 +91,7 @@ public class TrubboInitializer implements ApplicationListener<ContextRefreshedEv
         return startupClazz.getPackage().getName();
     }
 
-    @Override
-    public void initialize(ConfigurableApplicationContext applicationContext) {
+    public void initialize() {
         printTrubbo();
         YamlPropertiesFactoryBean factoryBean = new YamlPropertiesFactoryBean();
         factoryBean.setResources(new ClassPathResource("application.yml"));
@@ -122,5 +121,10 @@ public class TrubboInitializer implements ApplicationListener<ContextRefreshedEv
                 "    |  |     |  |\\  \\----.|  `--'  | |  |_)  | |  |_)  | |  `--'  | \n" +
                 "    |__|     | _| `._____| \\______/  |______/  |______/   \\______/  \n" +
                 "                                                                    ");
+    }
+
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        initialize();
     }
 }

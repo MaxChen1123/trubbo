@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add support for consumer-side Spring Boot integration">
-      <change afterPath="$PROJECT_DIR$/trubbo-spring/src/main/resources/META-INF/spring.factories" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Optimize TrubboInitializer for usability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/resources/META-INF/spring.factories" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/resources/META-INF/spring.factories" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,15 +257,8 @@
       <workItem from="1733061857862" duration="9507000" />
       <workItem from="1733125694440" duration="7483000" />
       <workItem from="1733145604517" duration="10879000" />
-      <workItem from="1733213227157" duration="6151000" />
-    </task>
-    <task id="LOCAL-00011" summary="add function to URL">
-      <option name="closed" value="true" />
-      <created>1730969258502</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1730969258502</updated>
+      <workItem from="1733213227157" duration="6761000" />
+      <workItem from="1733231375671" duration="681000" />
     </task>
     <task id="LOCAL-00012" summary="add timeout detection">
       <option name="closed" value="true" />
@@ -651,7 +644,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733217626570</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Optimize TrubboInitializer for usability">
+      <option name="closed" value="true" />
+      <created>1733219619325</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1733219619325</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +670,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update test" />
     <MESSAGE value="add JdkProxyFactory" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="add Zookeeper client" />
@@ -694,7 +694,8 @@
     <MESSAGE value="Add support for Spring Boot framework integration" />
     <MESSAGE value="Enhance provider-side Spring Boot integration" />
     <MESSAGE value="Add support for consumer-side Spring Boot integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add support for consumer-side Spring Boot integration" />
+    <MESSAGE value="Optimize TrubboInitializer for usability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize TrubboInitializer for usability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
