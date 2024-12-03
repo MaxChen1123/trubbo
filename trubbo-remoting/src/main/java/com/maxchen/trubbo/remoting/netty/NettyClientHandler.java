@@ -22,7 +22,7 @@ public class NettyClientHandler extends ChannelDuplexHandler {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object o) throws Exception {
         if (o instanceof TrubboMessage message) {
-            log.info("NettyClientHandler.channelRead0 read {}", o);
+            log.debug("NettyClientHandler.channelRead0 read {}", o);
             handler.received(NettyChannel.getChannel(ctx.channel()), message);
         } else {
             log.warn("NettyClientHandler.channelRead0 read unknown object {}", o);

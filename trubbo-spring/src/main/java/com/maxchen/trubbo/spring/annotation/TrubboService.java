@@ -1,4 +1,4 @@
-package com.maxchen.trubbo.spring.provider.annotation;
+package com.maxchen.trubbo.spring.annotation;
 
 import org.springframework.stereotype.Component;
 
