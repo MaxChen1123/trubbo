@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Enhance provider-side Spring Boot integration">
-      <change afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/annotation/EnableTrubbo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/annotation/TrubboReference.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add support for consumer-side Spring Boot integration">
+      <change afterPath="$PROJECT_DIR$/trubbo-spring/src/main/resources/META-INF/spring.factories" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-remoting/src/main/java/com/maxchen/trubbo/remoting/netty/NettyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-spring/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/provider/TrubboInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/provider/annotation/TrubboService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/annotation/TrubboService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,15 +257,7 @@
       <workItem from="1733061857862" duration="9507000" />
       <workItem from="1733125694440" duration="7483000" />
       <workItem from="1733145604517" duration="10879000" />
-      <workItem from="1733213227157" duration="4064000" />
-    </task>
-    <task id="LOCAL-00010" summary="add HeaderExchangeServer function test">
-      <option name="closed" value="true" />
-      <created>1730961896846</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1730961896846</updated>
+      <workItem from="1733213227157" duration="6151000" />
     </task>
     <task id="LOCAL-00011" summary="add function to URL">
       <option name="closed" value="true" />
@@ -655,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733133534910</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Add support for consumer-side Spring Boot integration">
+      <option name="closed" value="true" />
+      <created>1733217626569</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1733217626570</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +669,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Multitask test" />
     <MESSAGE value="update test" />
     <MESSAGE value="add JdkProxyFactory" />
     <MESSAGE value="bugfix" />
@@ -698,7 +693,8 @@
     <MESSAGE value="minor change" />
     <MESSAGE value="Add support for Spring Boot framework integration" />
     <MESSAGE value="Enhance provider-side Spring Boot integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhance provider-side Spring Boot integration" />
+    <MESSAGE value="Add support for consumer-side Spring Boot integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add support for consumer-side Spring Boot integration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

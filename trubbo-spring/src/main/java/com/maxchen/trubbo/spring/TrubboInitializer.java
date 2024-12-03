@@ -10,9 +10,7 @@ import com.maxchen.trubbo.spring.annotation.TrubboService;
 import lombok.extern.slf4j.Slf4j;
 import org.reflections.Reflections;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContextInitializer;
@@ -31,10 +29,29 @@ import java.util.Set;
 @Slf4j
 public class TrubboInitializer implements ApplicationListener<ContextRefreshedEvent>
         , ApplicationContextInitializer<ConfigurableApplicationContext>
-        , BeanFactoryPostProcessor {
+        , BeanPostProcessor {
     private static ClusterProtocol clusterProtocol;
     private static volatile String basePackage;
 
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        Class<?> clazz = bean.getClass();
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field field : fields) {
+            if (field.isAnnotationPresent(TrubboReference.class)) {
+                log.info("TrubboReference found in {}", clazz.getName());
+                Invoker refer = clusterProtocol.refer(field.getType().getName());
+                Object proxy = JdkProxyFactory.getProxy(field.getType(), refer);
+                try {
+                    field.setAccessible(true);
+                    field.set(bean, proxy);
+                } catch (IllegalAccessException e) {
+                    log.warn("TrubboReference field set failed", e);
+                }
+            }
+        }
+        return bean;
+    }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -95,40 +112,6 @@ public class TrubboInitializer implements ApplicationListener<ContextRefreshedEv
         }
         basePackage = getSpringApplicationPackage();
         log.info("Trubbo initialization finished");
-    }
-
-
-    @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
-        Class<?> clazz = null;
-        for (String beanDefinitionName : beanDefinitionNames) {
-            if (beanFactory.isFactoryBean(beanDefinitionName)) {
-                BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanDefinitionName);
-                String beanClassName = beanDefinition.getBeanClassName();
-                try {
-                    clazz = Class.forName(beanClassName);
-                } catch (Exception ignored) {
-                }
-            } else {
-                clazz = beanFactory.getType(beanDefinitionName);
-
-            }
-            if (clazz == null) {
-                continue;
-            }
-            Field[] fields = clazz.getDeclaredFields();
-            for (Field field : fields) {
-                if (field.isAnnotationPresent(TrubboReference.class)) {
-                    log.info("TrubboReference found in {}", clazz.getName());
-                    Invoker refer = clusterProtocol.refer(field.getType().getName());
-                    Object proxy = JdkProxyFactory.getProxy(field.getType(), refer);
-                    BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanDefinitionName);
-                    beanDefinition.getPropertyValues().addPropertyValue(field.getName(), proxy);
-                }
-            }
-
-        }
     }
 
     private void printTrubbo() {
