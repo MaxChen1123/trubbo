@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Optimize TrubboInitializer for usability">
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/loadbalance/ConsistentHashingLoadBalance.java" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="minor change">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.LoadBalance" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.LoadBalance" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,23 +258,7 @@
       <workItem from="1733145604517" duration="10879000" />
       <workItem from="1733213227157" duration="6761000" />
       <workItem from="1733231375671" duration="4928000" />
-      <workItem from="1733490681882" duration="2251000" />
-    </task>
-    <task id="LOCAL-00013" summary="bugfix">
-      <option name="closed" value="true" />
-      <created>1730972410226</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1730972410226</updated>
-    </task>
-    <task id="LOCAL-00014" summary="TrubboProtocol updated">
-      <option name="closed" value="true" />
-      <created>1730984938747</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1730984938747</updated>
+      <workItem from="1733490681882" duration="5887000" />
     </task>
     <task id="LOCAL-00015" summary="add HeartBeatHandler">
       <option name="closed" value="true" />
@@ -654,7 +636,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733232176502</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Added ConsistentHashingLoadBalance">
+      <option name="closed" value="true" />
+      <created>1733493083861</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1733493083861</updated>
+    </task>
+    <task id="LOCAL-00063" summary="minor change">
+      <option name="closed" value="true" />
+      <created>1733493494385</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1733493494385</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +670,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add JdkProxyFactory" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="add Zookeeper client" />
     <MESSAGE value="add Zookeeper test" />
@@ -692,12 +689,13 @@
     <MESSAGE value="Update test for one-way request" />
     <MESSAGE value="Fix bug that might could not load Zookeeper's configuration properly at startup" />
     <MESSAGE value="Add ExtensionLoader" />
-    <MESSAGE value="minor change" />
     <MESSAGE value="Add support for Spring Boot framework integration" />
     <MESSAGE value="Enhance provider-side Spring Boot integration" />
     <MESSAGE value="Add support for consumer-side Spring Boot integration" />
     <MESSAGE value="Optimize TrubboInitializer for usability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimize TrubboInitializer for usability" />
+    <MESSAGE value="Added ConsistentHashingLoadBalance" />
+    <MESSAGE value="minor change" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor change" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
