@@ -6,13 +6,17 @@ import com.maxchen.trubbo.registry.RegistryProtocol;
 import com.maxchen.trubbo.rpc.protocol.TrubboProtocol;
 import com.maxchen.trubbo.rpc.protocol.api.Invoker;
 import com.maxchen.trubbo.rpc.protocol.provider.ProviderInvoker;
+import lombok.Getter;
 
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ClusterProtocol {
     private final RegistryProtocol registryProtocol;
     public static final Map<String, Invoker> INVOKER_MAP = new ConcurrentHashMap<>();
+    @Getter
+    private static UUID clusterProtocolId = UUID.randomUUID();
     private final URL url;
 
     public ClusterProtocol(URL url) {

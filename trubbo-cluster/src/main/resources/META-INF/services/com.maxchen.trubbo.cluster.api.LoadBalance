@@ -1,1 +1,2 @@
 com.maxchen.trubbo.cluster.loadbalance.RandomLoadBalance
+com.maxchen.trubbo.cluster.loadbalance.ConsistentHashingLoadBalance

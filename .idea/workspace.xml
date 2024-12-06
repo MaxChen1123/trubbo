@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Optimize TrubboInitializer for usability">
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/loadbalance/ConsistentHashingLoadBalance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/java/com/maxchen/trubbo/spring/TrubboInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-spring/src/main/resources/META-INF/spring.factories" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-spring/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.LoadBalance" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.LoadBalance" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
         <option value="Interface" />
         <option value="Exception" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -258,15 +259,8 @@
       <workItem from="1733125694440" duration="7483000" />
       <workItem from="1733145604517" duration="10879000" />
       <workItem from="1733213227157" duration="6761000" />
-      <workItem from="1733231375671" duration="681000" />
-    </task>
-    <task id="LOCAL-00012" summary="add timeout detection">
-      <option name="closed" value="true" />
-      <created>1730972223589</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1730972223589</updated>
+      <workItem from="1733231375671" duration="4928000" />
+      <workItem from="1733490681882" duration="2251000" />
     </task>
     <task id="LOCAL-00013" summary="bugfix">
       <option name="closed" value="true" />
@@ -652,7 +646,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733219619325</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Optimize TrubboInitializer for usability">
+      <option name="closed" value="true" />
+      <created>1733232176502</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1733232176502</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
