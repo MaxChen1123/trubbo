@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="minor change">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -258,15 +257,7 @@
       <workItem from="1733145604517" duration="10879000" />
       <workItem from="1733213227157" duration="6761000" />
       <workItem from="1733231375671" duration="4928000" />
-      <workItem from="1733490681882" duration="5887000" />
-    </task>
-    <task id="LOCAL-00015" summary="add HeartBeatHandler">
-      <option name="closed" value="true" />
-      <created>1730990002478</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1730990002478</updated>
+      <workItem from="1733490681882" duration="8147000" />
     </task>
     <task id="LOCAL-00016" summary="bugfix">
       <option name="closed" value="true" />
@@ -652,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733493494385</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Add README">
+      <option name="closed" value="true" />
+      <created>1733497047159</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1733497047159</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +669,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bugfix" />
     <MESSAGE value="add Zookeeper client" />
     <MESSAGE value="add Zookeeper test" />
     <MESSAGE value="update ZookeeperClient" />
@@ -695,7 +693,8 @@
     <MESSAGE value="Optimize TrubboInitializer for usability" />
     <MESSAGE value="Added ConsistentHashingLoadBalance" />
     <MESSAGE value="minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor change" />
+    <MESSAGE value="Add README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -38,8 +38,24 @@ public class ConfigurationContext {
         }
     }
 
+    public static String getSpringServiceConfigProperty(String serviceName, String key, String defaultValue) {
+        return (String) SPRING_CONFIGURATION_MAP.getOrDefault("trubbo." + serviceName + '.' + key, defaultValue);
+    }
+
+    public static String getSpringMethodConfigProperty(String serviceName, String methodName, String key, String defaultValue) {
+        return (String) SPRING_CONFIGURATION_MAP.getOrDefault("trubbo." + serviceName + '.' + methodName + '.' + key, defaultValue);
+    }
+
     public static String getProperty(String key, String defaultValue) {
         RpcContext context = RpcContext.getContext();
+        String springMethodConfigProperty = getSpringMethodConfigProperty(context.getServiceName(), context.getMethodName(), key, null);
+        if (springMethodConfigProperty != null) {
+            return springMethodConfigProperty;
+        }
+        String springServiceConfigProperty = getSpringServiceConfigProperty(context.getServiceName(), key, null);
+        if (springServiceConfigProperty != null) {
+            return springServiceConfigProperty;
+        }
         String methodConfigProperty = getMethodConfigProperty(context.getServiceName(), context.getMethodName(), key, null);
         if (methodConfigProperty != null) {
             return methodConfigProperty;
