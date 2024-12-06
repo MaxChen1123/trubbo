@@ -4,7 +4,7 @@ import com.maxchen.trubbo.common.TrubboProtocolConstant;
 import com.maxchen.trubbo.common.util.TrubboProtocolUtil;
 import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboHeader;
 import com.maxchen.trubbo.remoting.netty.codec.protocol.TrubboMessage;
-import com.maxchen.trubbo.remoting.netty.codec.serialization.KyroSerializer;
+import com.maxchen.trubbo.remoting.netty.codec.serialization.KryoSerializer;
 import com.maxchen.trubbo.remoting.netty.codec.serialization.Serialization;
 import com.maxchen.trubbo.remoting.netty.exchange.Request;
 import com.maxchen.trubbo.remoting.netty.exchange.Response;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @Slf4j
 public class TrubboDecoder extends ByteToMessageDecoder {
-    private final Serialization serializer = new KyroSerializer();
+    private final Serialization serializer = new KryoSerializer();
 
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {

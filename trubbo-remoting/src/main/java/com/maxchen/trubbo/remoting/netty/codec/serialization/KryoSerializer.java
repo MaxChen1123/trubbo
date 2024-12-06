@@ -1,6 +1,6 @@
 package com.maxchen.trubbo.remoting.netty.codec.serialization;
 
-public class KyroSerializer implements Serialization {
+public class KryoSerializer implements Serialization {
     @Override
     public byte[] serialize(Object object) throws Exception {
         return KryoUtil.writeObjectToByteArray(object);
