@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="minor change">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailBackInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailFastInvoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/FailHandlingInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/FailHandlingInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailOverInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailOverInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.FailHandlingInvoker" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.FailHandlingInvoker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +23,8 @@
         <option value="package-info" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -259,15 +263,7 @@
       <workItem from="1733213227157" duration="6761000" />
       <workItem from="1733231375671" duration="4928000" />
       <workItem from="1733490681882" duration="9068000" />
-      <workItem from="1734011991542" duration="4109000" />
-    </task>
-    <task id="LOCAL-00019" summary="add trubbo-rpc module">
-      <option name="closed" value="true" />
-      <created>1730992080278</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1730992080278</updated>
+      <workItem from="1734011991542" duration="5447000" />
     </task>
     <task id="LOCAL-00020" summary="bugfix">
       <option name="closed" value="true" />
@@ -653,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734016171713</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="bugfix">
+      <option name="closed" value="true" />
+      <created>1734016594661</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1734016594661</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update ZookeeperClient" />
     <MESSAGE value="adjust structure" />
     <MESSAGE value="add util" />
     <MESSAGE value="add TrubboRegistry" />
@@ -696,7 +699,8 @@
     <MESSAGE value="Add support for Spring Configuration" />
     <MESSAGE value="Add support for Fault Tolerance" />
     <MESSAGE value="minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor change" />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
