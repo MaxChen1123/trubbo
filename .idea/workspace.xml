@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add README">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add support for Spring Configuration">
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/FailHandlingInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/exception/RpcException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailoverInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.FailHandlingInvoker" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +21,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Exception" />
         <option value="package-info" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -257,15 +263,8 @@
       <workItem from="1733145604517" duration="10879000" />
       <workItem from="1733213227157" duration="6761000" />
       <workItem from="1733231375671" duration="4928000" />
-      <workItem from="1733490681882" duration="8147000" />
-    </task>
-    <task id="LOCAL-00016" summary="bugfix">
-      <option name="closed" value="true" />
-      <created>1730990645842</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1730990645842</updated>
+      <workItem from="1733490681882" duration="9068000" />
+      <workItem from="1734011991542" duration="3803000" />
     </task>
     <task id="LOCAL-00017" summary="change structure">
       <option name="closed" value="true" />
@@ -651,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733497047159</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Add support for Spring Configuration">
+      <option name="closed" value="true" />
+      <created>1733499358984</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1733499358984</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Zookeeper client" />
     <MESSAGE value="add Zookeeper test" />
     <MESSAGE value="update ZookeeperClient" />
     <MESSAGE value="adjust structure" />
@@ -694,7 +700,8 @@
     <MESSAGE value="Added ConsistentHashingLoadBalance" />
     <MESSAGE value="minor change" />
     <MESSAGE value="Add README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add README" />
+    <MESSAGE value="Add support for Spring Configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add support for Spring Configuration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
