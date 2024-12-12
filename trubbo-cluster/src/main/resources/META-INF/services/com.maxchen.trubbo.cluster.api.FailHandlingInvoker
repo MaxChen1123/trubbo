@@ -1,2 +1,3 @@
 com.maxchen.trubbo.cluster.failhandler.FailOverInvoker
 com.maxchen.trubbo.cluster.failhandler.FailFastInvoker
+com.maxchen.trubbo.cluster.failhandler.FailSafeInvoker

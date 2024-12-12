@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="bugfix">
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add FailFastInvoker">
       <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailBackInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailFastInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailSafeInvoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/FailHandlingInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/FailHandlingInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailOverInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailOverInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.FailHandlingInvoker" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.FailHandlingInvoker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,15 +260,7 @@
       <workItem from="1733213227157" duration="6761000" />
       <workItem from="1733231375671" duration="4928000" />
       <workItem from="1733490681882" duration="9068000" />
-      <workItem from="1734011991542" duration="5447000" />
-    </task>
-    <task id="LOCAL-00020" summary="bugfix">
-      <option name="closed" value="true" />
-      <created>1731163186419</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1731163186419</updated>
+      <workItem from="1734011991542" duration="7443000" />
     </task>
     <task id="LOCAL-00021" summary="add ConsumerInvoker">
       <option name="closed" value="true" />
@@ -657,7 +646,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734016594661</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Add FailFastInvoker">
+      <option name="closed" value="true" />
+      <created>1734017771312</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1734017771312</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adjust structure" />
     <MESSAGE value="add util" />
     <MESSAGE value="add TrubboRegistry" />
     <MESSAGE value="add TrubboRegistry test" />
@@ -700,7 +696,8 @@
     <MESSAGE value="Add support for Fault Tolerance" />
     <MESSAGE value="minor change" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="Add FailFastInvoker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add FailFastInvoker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
