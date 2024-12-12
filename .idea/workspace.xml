@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="Add support for Spring Configuration">
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/api/FailHandlingInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/exception/RpcException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/failhandler/FailoverInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/resources/META-INF/services/com.maxchen.trubbo.cluster.api.FailHandlingInvoker" afterDir="false" />
+    <list default="true" id="4348c668-dc26-48cc-a433-9a6eb4af316a" name="Changes" comment="minor change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-common/src/main/java/com/maxchen/trubbo/common/configuration/ConfigConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/trubbo-cluster/src/main/java/com/maxchen/trubbo/cluster/ClusterProtocol.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,23 +259,7 @@
       <workItem from="1733213227157" duration="6761000" />
       <workItem from="1733231375671" duration="4928000" />
       <workItem from="1733490681882" duration="9068000" />
-      <workItem from="1734011991542" duration="3803000" />
-    </task>
-    <task id="LOCAL-00017" summary="change structure">
-      <option name="closed" value="true" />
-      <created>1730991334157</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1730991334157</updated>
-    </task>
-    <task id="LOCAL-00018" summary="bugfix">
-      <option name="closed" value="true" />
-      <created>1730991349131</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1730991349131</updated>
+      <workItem from="1734011991542" duration="4109000" />
     </task>
     <task id="LOCAL-00019" summary="add trubbo-rpc module">
       <option name="closed" value="true" />
@@ -658,7 +637,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733499358984</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Add support for Fault Tolerance">
+      <option name="closed" value="true" />
+      <created>1734016100590</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1734016100591</updated>
+    </task>
+    <task id="LOCAL-00067" summary="minor change">
+      <option name="closed" value="true" />
+      <created>1734016171713</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1734016171713</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Zookeeper test" />
     <MESSAGE value="update ZookeeperClient" />
     <MESSAGE value="adjust structure" />
     <MESSAGE value="add util" />
@@ -698,10 +692,11 @@
     <MESSAGE value="Add support for consumer-side Spring Boot integration" />
     <MESSAGE value="Optimize TrubboInitializer for usability" />
     <MESSAGE value="Added ConsistentHashingLoadBalance" />
-    <MESSAGE value="minor change" />
     <MESSAGE value="Add README" />
     <MESSAGE value="Add support for Spring Configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add support for Spring Configuration" />
+    <MESSAGE value="Add support for Fault Tolerance" />
+    <MESSAGE value="minor change" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor change" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

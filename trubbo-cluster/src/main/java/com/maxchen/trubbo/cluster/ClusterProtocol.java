@@ -30,7 +30,9 @@ public class ClusterProtocol {
     }
 
     public void export(URL url) {
-        TrubboProtocol.export(url, new ProviderInvoker(url.getParameter(UrlConstant.SERVICE_KEY), url.getParameter("impl")));
+        String serviceName = url.getParameter(UrlConstant.SERVICE_KEY);
+        String impl = url.getParameter("impl") == null ? serviceName + "Impl" : url.getParameter("impl");
+        TrubboProtocol.export(url, new ProviderInvoker(serviceName, impl));
         registryProtocol.register(url);
     }
 

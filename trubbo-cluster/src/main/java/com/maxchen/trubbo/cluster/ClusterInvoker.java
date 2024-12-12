@@ -1,8 +1,8 @@
 package com.maxchen.trubbo.cluster;
 
+import com.maxchen.trubbo.cluster.api.FailHandlingInvoker;
 import com.maxchen.trubbo.cluster.api.LoadBalance;
 import com.maxchen.trubbo.cluster.exception.NoProviderException;
-import com.maxchen.trubbo.cluster.failhandler.FailOverInvoker;
 import com.maxchen.trubbo.common.RpcContext;
 import com.maxchen.trubbo.common.URL.URL;
 import com.maxchen.trubbo.common.URL.UrlConstant;
@@ -24,7 +24,7 @@ public class ClusterInvoker implements Invoker {
     private final ClusterProtocol ClusterProtocol;
 
     private static final String DEFAULT_LOAD_BALANCE = "com.maxchen.trubbo.cluster.loadbalance.RandomLoadBalance";
-    public static final String DEFAULT_FAIL_HANDLING = "com.maxchen.trubbo.cluster.failhandler.FailoverInvoker";
+    public static final String DEFAULT_FAIL_HANDLING = "com.maxchen.trubbo.cluster.failhandler.FailOverInvoker";
 
     public ClusterInvoker(String serviceName, ClusterProtocol ClusterProtocol) {
         this.serviceName = serviceName;
@@ -63,7 +63,7 @@ public class ClusterInvoker implements Invoker {
 
         // FailHandling
         String failHandling = ConfigurationContext.getProperty(ConfigConstants.FAIL_HANDLING_KEY, DEFAULT_FAIL_HANDLING);
-        FailOverInvoker invoker = ExtensionLoader.getExtension(FailOverInvoker.class, failHandling);
+        FailHandlingInvoker invoker = ExtensionLoader.getExtension(FailHandlingInvoker.class, failHandling);
         return invoker.invoke(providersAddr.stream().toList(), invocation, loadBalance);
 
     }
