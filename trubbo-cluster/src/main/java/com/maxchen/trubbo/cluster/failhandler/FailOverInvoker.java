@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FailoverInvoker implements FailHandlingInvoker {
+public class FailOverInvoker implements FailHandlingInvoker {
     @Override
     public InvocationResult invoke(List<String> providersAddr, Invocation invocation, LoadBalance loadBalance) {
         String retry = ConfigurationContext.getProperty(ConfigConstants.RETRY_KEY, "3");
